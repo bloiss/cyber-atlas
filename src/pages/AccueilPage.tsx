@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { D } from '../data';
+import { ConstellationSection } from '../scene/ConstellationSection';
 
 const ETAPES = D.parcours.reduce((s, p) => s + p.etapes.length, 0);
 
@@ -70,6 +71,8 @@ export function AccueilPage() {
           </div>
         </div>
       </div>
+
+      <ConstellationSection />
 
       <h2 style={{ marginBottom: 14 }}>Commencer ici</h2>
       <div className="steps">
