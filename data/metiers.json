@@ -1,0 +1,83 @@
+[
+  {
+    "metier": "Analyste SOC",
+    "equipe": "Défense",
+    "quotidien": "Surveiller les alertes dans un SIEM, trier les vrais incidents, escalader et documenter.",
+    "competences": "Réseau, Windows, Linux, logs, MITRE ATT&CK, SIEM.",
+    "salaire": "≈ 35–42 k€",
+    "sortieEcole": "Oui",
+    "certifs": "TryHackMe SAL1, Security+"
+  },
+  {
+    "metier": "Pentester",
+    "equipe": "Offensif",
+    "quotidien": "Tester la sécurité d'applications, de réseaux ou d'Active Directory avec l'accord du client, puis rédiger un rapport.",
+    "competences": "Web (OWASP), AD, Linux, Python, méthode, rédaction.",
+    "salaire": "≈ 38–45 k€",
+    "sortieEcole": "Oui",
+    "certifs": "eJPT, puis HTB CPTS ou OSCP+"
+  },
+  {
+    "metier": "Consultant GRC",
+    "equipe": "Gouvernance",
+    "quotidien": "Analyser les risques, rédiger les politiques, accompagner la conformité (ISO 27001, RGPD, NIS 2).",
+    "competences": "Normes, EBIOS RM, écrit et oral.",
+    "salaire": "≈ 38–45 k€",
+    "sortieEcole": "Oui",
+    "certifs": "ISO 27001, EBIOS RM"
+  },
+  {
+    "metier": "Ingénieur DevSecOps",
+    "equipe": "Ingénierie",
+    "quotidien": "Intégrer la sécurité dans le cloud et le cycle de développement.",
+    "competences": "Linux, cloud, Docker, Kubernetes, CI/CD, code.",
+    "salaire": "≈ 40–48 k€",
+    "sortieEcole": "Oui",
+    "certifs": "Certifs cloud, Security+"
+  },
+  {
+    "metier": "Analyste forensic / CSIRT",
+    "equipe": "Défense",
+    "quotidien": "Comprendre une attaque après coup : disques, mémoire, journaux, puis aider à la reprise.",
+    "competences": "Windows en profondeur, forensic, sang-froid.",
+    "salaire": "≈ 38–45 k€",
+    "sortieEcole": "Avec expérience",
+    "certifs": "BTL1, GCFA plus tard"
+  },
+  {
+    "metier": "Analyste CTI",
+    "equipe": "Défense",
+    "quotidien": "Suivre les groupes d'attaquants et produire des rapports utiles aux défenseurs.",
+    "competences": "OSINT, ATT&CK, anglais, écrit très clair.",
+    "salaire": "≈ 38–45 k€",
+    "sortieEcole": "Avec expérience",
+    "certifs": "Le portfolio compte plus"
+  },
+  {
+    "metier": "Chercheur en vulnérabilités",
+    "equipe": "Offensif",
+    "quotidien": "Trouver des failles inédites, analyser binaires et malwares.",
+    "competences": "C, assembleur, Ghidra, exploitation mémoire.",
+    "salaire": "≈ 40–50 k€",
+    "sortieEcole": "Avec expérience",
+    "certifs": "Le niveau en CTF compte plus"
+  },
+  {
+    "metier": "Architecte sécurité",
+    "equipe": "Ingénierie",
+    "quotidien": "Concevoir des systèmes sûrs dès le départ : réseau, identités, cloud.",
+    "competences": "Vision globale, arbitrage risque / coût.",
+    "salaire": "Rarement junior",
+    "sortieEcole": "Après 5 ans+",
+    "certifs": "CISSP"
+  },
+  {
+    "metier": "RSSI",
+    "equipe": "Gouvernance",
+    "quotidien": "Piloter la sécurité de toute l'organisation : stratégie, budget, crise.",
+    "competences": "Management, communication, risques.",
+    "salaire": "Fin de parcours",
+    "sortieEcole": "Après 5 ans+",
+    "certifs": "CISSP, CISM"
+  }
+]

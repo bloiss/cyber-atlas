@@ -1,0 +1,170 @@
+[
+  {
+    "periode": "Oct–Nov",
+    "titre": "Installer le rythme",
+    "etapes": [
+      {
+        "id": "0-0",
+        "titre": "Installer VirtualBox + Kali en VM",
+        "livrable": "Une VM qui démarre, avec un snapshot propre.",
+        "lien": "https://www.kali.org/docs/virtualization/install-virtualbox-guest-vm/"
+      },
+      {
+        "id": "0-1",
+        "titre": "OverTheWire Bandit, niveaux 0 à 15",
+        "livrable": "Fiche perso des 30 commandes Linux apprises.",
+        "lien": "https://overthewire.org/wargames/bandit/"
+      },
+      {
+        "id": "0-2",
+        "titre": "TryHackMe : parcours Pre Security",
+        "livrable": "Parcours terminé + schéma OSI fait de mémoire.",
+        "lien": "https://tryhackme.com/path/outline/presecurity"
+      },
+      {
+        "id": "0-3",
+        "titre": "SQLBolt en entier",
+        "livrable": "Savoir écrire un SELECT avec JOIN sans aide.",
+        "lien": "https://sqlbolt.com"
+      },
+      {
+        "id": "0-4",
+        "titre": "Oral : 2 minutes chaque matin pendant 30 jours",
+        "livrable": "30 jours cochés.",
+        "lien": ""
+      }
+    ]
+  },
+  {
+    "periode": "Décembre",
+    "titre": "Fondations",
+    "etapes": [
+      {
+        "id": "1-0",
+        "titre": "SecNumacadémie de l'ANSSI",
+        "livrable": "Attestation à ajouter au CV.",
+        "lien": "https://cyber.gouv.fr/le-mooc-secnumacademie"
+      },
+      {
+        "id": "1-1",
+        "titre": "Réseau : TCP/IP, DNS, HTTP + Wireshark",
+        "livrable": "Expliquer un échange DNS puis HTTP capturé.",
+        "lien": "https://www.wireshark.org/docs/"
+      },
+      {
+        "id": "1-2",
+        "titre": "Premiers challenges Root-Me",
+        "livrable": "10 challenges validés + 5 write-ups.",
+        "lien": "https://www.root-me.org"
+      },
+      {
+        "id": "1-3",
+        "titre": "Premier exposé enregistré de 5 minutes",
+        "livrable": "Une vidéo sur une cyberattaque, sans notes.",
+        "lien": ""
+      }
+    ]
+  },
+  {
+    "periode": "Janvier",
+    "titre": "Web offensif et défensif",
+    "etapes": [
+      {
+        "id": "2-0",
+        "titre": "PortSwigger : labs SQL injection (Apprentice)",
+        "livrable": "Labs terminés + fiche « prévenir une SQLi ».",
+        "lien": "https://portswigger.net/web-security/sql-injection"
+      },
+      {
+        "id": "2-1",
+        "titre": "OWASP Top 10:2025, une faille par semaine",
+        "livrable": "Expliquer les 10 risques en 1 minute chacun.",
+        "lien": "https://owasp.org/Top10/2025/"
+      },
+      {
+        "id": "2-2",
+        "titre": "Attaquer puis corriger Juice Shop en local",
+        "livrable": "Projet GitHub : 5 failles et leur correctif.",
+        "lien": "https://owasp.org/www-project-juice-shop/"
+      },
+      {
+        "id": "2-3",
+        "titre": "Atteindre 10 write-ups publiés",
+        "livrable": "10 write-ups propres sur GitHub.",
+        "lien": ""
+      }
+    ]
+  },
+  {
+    "periode": "Février",
+    "titre": "Élargir",
+    "etapes": [
+      {
+        "id": "3-0",
+        "titre": "Cryptographie de base avec CryptoHack",
+        "livrable": "Sections Introduction et General terminées.",
+        "lien": "https://cryptohack.org"
+      },
+      {
+        "id": "3-1",
+        "titre": "Windows et Active Directory",
+        "livrable": "Expliquer domaine, GPO et Kerberos simplement.",
+        "lien": "https://tryhackme.com"
+      },
+      {
+        "id": "3-2",
+        "titre": "Premier CTF en équipe",
+        "livrable": "Participation + write-up d'équipe.",
+        "lien": "https://ctftime.org"
+      }
+    ]
+  },
+  {
+    "periode": "Mars",
+    "titre": "Se spécialiser",
+    "etapes": [
+      {
+        "id": "4-0",
+        "titre": "Choisir offensif ou défensif",
+        "livrable": "Une page « pourquoi je choisis X ».",
+        "lien": ""
+      },
+      {
+        "id": "4-1",
+        "titre": "Voie offensive : HTB Starting Point",
+        "livrable": "Tiers 0 à 2, chaque machine résumée.",
+        "lien": "https://www.hackthebox.com"
+      },
+      {
+        "id": "4-2",
+        "titre": "Voie défensive : 5 challenges CyberDefenders",
+        "livrable": "5 rapports d'analyse d'incident.",
+        "lien": "https://cyberdefenders.org"
+      }
+    ]
+  },
+  {
+    "periode": "Avril",
+    "titre": "Démontrer",
+    "etapes": [
+      {
+        "id": "5-0",
+        "titre": "Présenter une attaque devant un groupe, sans notes",
+        "livrable": "Exposé de 10 min en cours ou à l'asso.",
+        "lien": ""
+      },
+      {
+        "id": "5-1",
+        "titre": "CV, GitHub et profil Root-Me à jour",
+        "livrable": "20+ write-ups et projets liés au CV.",
+        "lien": ""
+      },
+      {
+        "id": "5-2",
+        "titre": "Candidater à un stage ou une alternance",
+        "livrable": "10 candidatures envoyées avec ton portfolio.",
+        "lien": ""
+      }
+    ]
+  }
+]

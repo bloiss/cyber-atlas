@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Termes du lexique",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["terme", "domaine", "definition"],
+    "additionalProperties": false,
+    "properties": {
+      "terme": { "type": "string" },
+      "domaine": { "type": "string", "enum": ["Général", "Réseau", "Web", "Système", "Crypto", "Attaque", "Défense", "Organisation"] },
+      "definition": { "type": "string", "description": "Une ou deux phrases, en langage simple" }
+    }
+  }
+}

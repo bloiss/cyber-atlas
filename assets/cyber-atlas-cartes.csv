@@ -1,0 +1,150 @@
+Question,Réponse,Thème
+Port de FTP ?,"21 (transfert de fichiers, en clair)",Ports
+Port de SSH ?,22 (accès distant chiffré),Ports
+Port de Telnet ?,"23 (accès distant en clair, à bannir)",Ports
+Port de SMTP ?,25 (envoi d'e-mails),Ports
+Port de DNS ?,53,Ports
+Port de HTTP ?,80,Ports
+Port de HTTPS ?,443,Ports
+Port de POP3 ?,110,Ports
+Port d'IMAP ?,143,Ports
+Ports de SMB ?,139 et 445 (partage de fichiers Windows),Ports
+Ports de LDAP et LDAPS ?,389 et 636,Ports
+Port de Kerberos ?,88,Ports
+Port de MySQL ?,3306,Ports
+Port de PostgreSQL ?,5432,Ports
+Port de RDP ?,3389 (bureau à distance Windows),Ports
+Port de Redis ?,6379,Ports
+Port de SNMP ?,161 (UDP),Ports
+Port HTTP alternatif courant ?,8080,Ports
+Port de MS SQL Server ?,1433,Ports
+Port de NTP ?,"123 (UDP, synchronisation de l'heure)",Ports
+Méthode HTTP pour lire une ressource ?,GET,Web et HTTP
+Méthode HTTP pour créer une ressource ?,POST,Web et HTTP
+Différence entre PUT et PATCH ?,"PUT remplace la ressource entière, PATCH la modifie en partie",Web et HTTP
+Code HTTP 200 ?,"OK, succès",Web et HTTP
+Codes HTTP 301 et 302 ?,Redirection permanente (301) ou temporaire (302),Web et HTTP
+Code HTTP 401 ?,Non authentifié,Web et HTTP
+Code HTTP 403 ?,Interdit : l'accès est refusé,Web et HTTP
+Code HTTP 404 ?,Ressource introuvable,Web et HTTP
+Code HTTP 500 ?,Erreur interne du serveur,Web et HTTP
+À quoi sert un cookie de session ?,À garder l'utilisateur connecté entre deux requêtes,Web et HTTP
+Que fait l'attribut de cookie HttpOnly ?,Il empêche JavaScript de lire le cookie,Web et HTTP
+Que fait l'attribut de cookie Secure ?,Le cookie n'est envoyé qu'en HTTPS,Web et HTTP
+Que fait l'attribut de cookie SameSite ?,"Il limite l'envoi du cookie depuis d'autres sites, ce qui protège contre la CSRF",Web et HTTP
+Qu'est-ce que la Same-Origin Policy ?,Règle du navigateur qui empêche un site de lire les données d'un autre (origine = protocole + domaine + port),Web et HTTP
+À quoi sert l'en-tête Content-Security-Policy ?,À limiter les sources de scripts autorisées sur une page,Web et HTTP
+À quoi sert l'en-tête HSTS ?,À forcer le navigateur à toujours utiliser HTTPS pour ce site,Web et HTTP
+OWASP 2025 — A01 ?,Contrôle d'accès défaillant,OWASP Top 10 2025
+OWASP 2025 — A02 ?,Mauvaise configuration de sécurité,OWASP Top 10 2025
+OWASP 2025 — A03 ?,Défaillances de la chaîne d'approvisionnement logicielle,OWASP Top 10 2025
+OWASP 2025 — A04 ?,Défaillances cryptographiques,OWASP Top 10 2025
+OWASP 2025 — A05 ?,Injection,OWASP Top 10 2025
+OWASP 2025 — A06 ?,Conception non sécurisée,OWASP Top 10 2025
+OWASP 2025 — A07 ?,Défaillances d'authentification,OWASP Top 10 2025
+OWASP 2025 — A08 ?,Défaillances d'intégrité du logiciel ou des données,OWASP Top 10 2025
+OWASP 2025 — A09 ?,Défaillances de journalisation et d'alerte,OWASP Top 10 2025
+OWASP 2025 — A10 ?,Mauvaise gestion des conditions exceptionnelles,OWASP Top 10 2025
+Qu'est-ce qu'une injection SQL ?,Une saisie utilisateur change le sens d'une requête SQL,Failles web et protections
+Meilleure protection contre l'injection SQL ?,"Les requêtes préparées (paramétrées), partout",Failles web et protections
+Qu'est-ce qu'une XSS ?,Du JavaScript injecté s'exécute dans la page d'autres utilisateurs,Failles web et protections
+Les 3 types de XSS ?,"Réfléchie, stockée, basée sur le DOM",Failles web et protections
+Protection principale contre la XSS ?,"Encoder les sorties selon le contexte, plus une Content-Security-Policy",Failles web et protections
+Qu'est-ce qu'une CSRF ?,Une requête envoyée à l'insu d'un utilisateur connecté,Failles web et protections
+Protections contre la CSRF ?,Jeton anti-CSRF et cookies SameSite,Failles web et protections
+Qu'est-ce qu'une IDOR ?,Accès aux données d'un autre utilisateur faute de contrôle d'accès sur l'identifiant,Failles web et protections
+Protection contre l'IDOR ?,"Vérifier côté serveur, à chaque requête, que l'utilisateur a le droit d'accéder à l'objet",Failles web et protections
+Qu'est-ce qu'une SSRF ?,"Le serveur est amené à faire des requêtes non prévues, souvent vers le réseau interne",Failles web et protections
+Protection contre la SSRF ?,Liste blanche des destinations autorisées et isolement réseau du serveur,Failles web et protections
+Pourquoi ne jamais faire confiance au côté client ?,Tout ce qui vient du navigateur peut être modifié ; la validation se fait côté serveur,Failles web et protections
+Comment stocker un mot de passe ?,"Avec un hash lent et salé (bcrypt, Argon2), jamais en clair ni en MD5",Failles web et protections
+Afficher le dossier courant ?,pwd,Linux
+"Lister tous les fichiers, cachés compris, avec détails ?",ls -la,Linux
+"Chercher un texte dans les fichiers d'un dossier, sans tenir compte de la casse ?","grep -ri ""texte"" dossier/",Linux
+Chercher des fichiers par nom ?,"find /chemin -name ""motif""",Linux
+Que fait 2>/dev/null ?,Il masque les messages d'erreur,Linux
+Afficher les 20 premières lignes d'un fichier ?,head -n 20 fichier,Linux
+Suivre un fichier de log en direct ?,tail -f fichier,Linux
+Qui suis-je et dans quels groupes ?,id,Linux
+Voir ce que je peux lancer avec sudo ?,sudo -l,Linux
+Lister les processus ?,ps aux,Linux
+Lister les ports en écoute ?,ss -tulpn,Linux
+Changer les permissions d'un fichier ?,chmod,Linux
+Changer le propriétaire d'un fichier ?,chown,Linux
+Que signifie la permission 750 ?,"Propriétaire : rwx, groupe : r-x, autres : aucun droit",Linux
+Que signifie la permission 644 ?,"Propriétaire : rw-, groupe et autres : r--",Linux
+Identifier le type d'un fichier ?,file fichier,Linux
+Extraire le texte lisible d'un binaire ?,strings fichier,Linux
+Afficher une requête HTTP avec ses en-têtes ?,curl -i URL,Linux
+Où sont stockés les comptes utilisateurs ?,/etc/passwd,Linux
+Où sont stockés les hashs des mots de passe ?,/etc/shadow (lisible par root seulement),Linux
+Dossier des journaux système ?,/var/log,Linux
+Rediriger la sortie d'une commande vers une autre ?,Le pipe : commande1 | commande2,Linux
+Que fait le bit SUID ?,"Le programme s'exécute avec les droits de son propriétaire, pas de celui qui le lance",Linux
+Afficher l'historique des commandes ?,history,Linux
+Afficher l'aide d'une commande ?,man commande,Linux
+"Les 7 couches du modèle OSI, de bas en haut ?","Physique, Liaison, Réseau, Transport, Session, Présentation, Application",Réseau
+Couche OSI d'une adresse IP ?,3 — Réseau,Réseau
+Couche OSI de TCP et UDP ?,4 — Transport,Réseau
+Couche OSI d'une adresse MAC ?,2 — Liaison,Réseau
+Différence TCP / UDP ?,"TCP : fiable, ordonné, avec connexion. UDP : rapide, sans garantie",Réseau
+Les 3 étapes du handshake TCP ?,"SYN, SYN-ACK, ACK",Réseau
+Rôle du DNS ?,Traduire un nom de domaine en adresse IP,Réseau
+Rôle du DHCP ?,Attribuer automatiquement une adresse IP aux machines,Réseau
+Rôle d'ARP ?,Trouver l'adresse MAC qui correspond à une adresse IP sur le réseau local,Réseau
+Plages d'IP privées IPv4 ?,"10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16",Réseau
+Adresse de loopback ?,127.0.0.1 (localhost),Réseau
+Combien d'adresses dans un /24 ?,256 (254 utilisables pour des machines),Réseau
+Qu'est-ce que le NAT ?,Traduction d'adresses : plusieurs machines privées partagent une IP publique,Réseau
+Rôle d'un pare-feu ?,Autoriser ou bloquer le trafic selon des règles,Réseau
+Qu'est-ce qu'une DMZ ?,Zone isolée pour les serveurs exposés à Internet,Réseau
+Qu'est-ce qu'un VLAN ?,Un réseau local virtuel qui sépare logiquement des machines sur le même équipement,Réseau
+Rôle d'un VPN ?,Créer un tunnel chiffré vers un réseau distant,Réseau
+Outil pour capturer et lire le trafic réseau ?,Wireshark (ou tcpdump en ligne de commande),Réseau
+Commande pour tester si une machine répond ?,ping,Réseau
+Commande pour voir le chemin réseau jusqu'à une machine ?,traceroute (tracert sous Windows),Réseau
+"Encodage, hachage, chiffrement : lequel est réversible sans clé ?","L'encodage (Base64, hex) : ce n'est pas de la sécurité",Crypto
+Propriété principale d'une fonction de hachage ?,Sens unique : impossible de retrouver la donnée à partir du hash,Crypto
+Qu'est-ce qu'une collision de hash ?,Deux données différentes qui donnent le même hash,Crypto
+Pourquoi MD5 et SHA-1 sont déconseillés ?,Des collisions sont réalisables en pratique,Crypto
+À quoi sert un sel (salt) ?,À rendre uniques les hashs de mots de passe identiques et contrer les tables précalculées,Crypto
+Chiffrement symétrique : principe et exemple ?,Une seule clé pour chiffrer et déchiffrer. Ex : AES,Crypto
+Chiffrement asymétrique : principe et exemple ?,"Clé publique et clé privée. Ex : RSA, courbes elliptiques",Crypto
+Avec quelle clé chiffre-t-on un message destiné à Alice ?,Avec la clé publique d'Alice,Crypto
+Avec quelle clé Alice signe-t-elle un document ?,Avec sa clé privée,Crypto
+À quoi sert un certificat TLS ?,À prouver l'identité d'un site et permettre le chiffrement HTTPS,Crypto
+Qu'est-ce qu'une PKI ?,"L'infrastructure qui émet, gère et révoque les certificats",Crypto
+Qu'est-ce qu'un HMAC ?,"Un hash combiné à une clé secrète, pour garantir intégrité et authenticité",Crypto
+Qu'apporte la confidentialité persistante (forward secrecy) ?,Le vol futur d'une clé ne permet pas de déchiffrer les échanges passés,Crypto
+Hash recommandé pour les mots de passe ?,Argon2 ou bcrypt,Crypto
+Qu'est-ce que la stéganographie ?,"Cacher un message dans un autre fichier, sans que cela se voie",Crypto
+Que signifie la triade DIC ?,"Disponibilité, Intégrité, Confidentialité",Défense et organisation
+Principe du moindre privilège ?,Chaque compte n'a que les droits strictement nécessaires,Défense et organisation
+Défense en profondeur ?,Plusieurs couches de protection indépendantes,Défense et organisation
+Rôle d'un SOC ?,Surveiller la sécurité en continu et réagir aux alertes,Défense et organisation
+Rôle d'un SIEM ?,Centraliser les journaux et déclencher des alertes,Défense et organisation
+Rôle d'un EDR ?,Détecter les comportements suspects sur les postes et permettre d'y répondre,Défense et organisation
+Qu'est-ce qu'un IOC ?,"Une trace technique d'attaque (IP, hash, domaine) réutilisable pour la détection",Défense et organisation
+Qu'est-ce que MITRE ATT&CK ?,La matrice mondiale des tactiques et techniques d'attaque observées,Défense et organisation
+Qu'est-ce qu'un faux positif ?,Une alerte déclenchée sans vraie menace,Défense et organisation
+Qu'est-ce que le threat hunting ?,"Chercher activement des attaquants déjà présents, sans attendre d'alerte",Défense et organisation
+Qu'est-ce que le Zero Trust ?,Ne faire confiance à rien par défaut : chaque accès est vérifié,Défense et organisation
+Qu'est-ce qu'une CVE ?,L'identifiant unique d'une vulnérabilité publique,Défense et organisation
+Que mesure le CVSS ?,"La gravité d'une vulnérabilité, de 0 à 10",Défense et organisation
+Qu'est-ce qu'un zero-day ?,Une faille sans correctif disponible au moment où elle est exploitée,Défense et organisation
+La règle de sauvegarde 3-2-1 ?,"3 copies, sur 2 supports différents, dont 1 hors ligne",Défense et organisation
+Premier réflexe en cas d'incident sur un poste ?,"Le déconnecter du réseau sans l'éteindre, et prévenir",Défense et organisation
+Que dit l'article 323-1 du Code pénal ?,Il réprime l'accès ou le maintien frauduleux dans un système informatique,Défense et organisation
+Qu'est-ce que NIS 2 ?,Directive européenne qui impose des obligations de cybersécurité à de nombreuses organisations,Défense et organisation
+Qu'est-ce que l'ANSSI ?,L'autorité nationale française de cybersécurité,Défense et organisation
+Qu'est-ce qu'un bug bounty ?,Un programme qui rémunère le signalement de failles dans un périmètre autorisé,Défense et organisation
+Qu'est-ce que Stuxnet ?,"La première cyberarme connue, qui visait des centrifugeuses iraniennes (découverte en 2010)",Culture cyber
+Quelle faille WannaCry exploitait-il ?,"Une faille de SMBv1 (MS17-010), corrigée deux mois avant l'attaque de mai 2017",Culture cyber
+Qu'est-ce que Log4Shell ?,"Une faille critique de la bibliothèque Java Log4j, découverte fin 2021",Culture cyber
+Qu'est-ce que NotPetya ?,"Un malware destructeur de 2017, déguisé en rançongiciel, qui a touché de nombreuses entreprises",Culture cyber
+Qu'est-ce que Heartbleed ?,Une faille d'OpenSSL de 2014 qui laissait lire la mémoire des serveurs,Culture cyber
+Qu'est-ce qu'une attaque par la chaîne d'approvisionnement ?,"Atteindre une cible via un fournisseur ou un logiciel qu'elle utilise (ex : SolarWinds, 2020)",Culture cyber
+Qu'est-ce qu'un APT ?,"Un groupe d'attaquants organisé, souvent étatique, discret et persistant",Culture cyber
+Qu'est-ce qu'un CTF ?,Une compétition de défis de sécurité où l'on récupère des « flags »,Culture cyber
+Qu'est-ce que le FCSC ?,"Le France Cybersecurity Challenge, organisé par l'ANSSI",Culture cyber
+Quand a lieu l'European Cyber Week à Rennes ?,"En novembre, chaque année",Culture cyber

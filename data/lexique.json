@@ -1,0 +1,477 @@
+[
+  {
+    "terme": "Actif",
+    "domaine": "Organisation",
+    "definition": "Tout ce qui a de la valeur et qu'il faut protéger : données, serveurs, applications, réputation."
+  },
+  {
+    "terme": "Active Directory (AD)",
+    "domaine": "Système",
+    "definition": "L'annuaire Microsoft qui gère utilisateurs, ordinateurs et droits. Cible n°1 une fois à l'intérieur."
+  },
+  {
+    "terme": "Adresse IP",
+    "domaine": "Réseau",
+    "definition": "Adresse qui identifie une machine sur un réseau. IPv4 ou IPv6."
+  },
+  {
+    "terme": "Analyse de risques",
+    "domaine": "Organisation",
+    "definition": "Identifier ce qui peut mal tourner, avec quelle probabilité et quel impact, pour prioriser."
+  },
+  {
+    "terme": "ANSSI",
+    "domaine": "Organisation",
+    "definition": "L'autorité française en cybersécurité."
+  },
+  {
+    "terme": "APT",
+    "domaine": "Attaque",
+    "definition": "Groupe d'attaquants organisé, souvent lié à un État, discret et persistant."
+  },
+  {
+    "terme": "Authentification multifacteur (MFA)",
+    "domaine": "Défense",
+    "definition": "Prouver son identité avec au moins deux éléments différents : ce qu'on sait, ce qu'on a, ce qu'on est."
+  },
+  {
+    "terme": "Backdoor",
+    "domaine": "Attaque",
+    "definition": "Accès caché laissé dans un système pour y revenir sans contrôle."
+  },
+  {
+    "terme": "Botnet",
+    "domaine": "Attaque",
+    "definition": "Réseau de machines infectées pilotées à distance."
+  },
+  {
+    "terme": "Bruteforce",
+    "domaine": "Attaque",
+    "definition": "Essayer toutes les combinaisons jusqu'à trouver le bon mot de passe."
+  },
+  {
+    "terme": "Buffer overflow",
+    "domaine": "Attaque",
+    "definition": "Un programme écrit plus de données que prévu en mémoire, ce qui peut permettre d'exécuter du code."
+  },
+  {
+    "terme": "Bug bounty",
+    "domaine": "Organisation",
+    "definition": "Programme qui rémunère le signalement de failles dans un périmètre autorisé."
+  },
+  {
+    "terme": "C2 (Command and Control)",
+    "domaine": "Attaque",
+    "definition": "Serveur depuis lequel l'attaquant pilote les machines compromises."
+  },
+  {
+    "terme": "CERT / CSIRT",
+    "domaine": "Organisation",
+    "definition": "Équipe de réponse aux incidents. Le CERT-FR est celui de l'État."
+  },
+  {
+    "terme": "Certificat TLS",
+    "domaine": "Crypto",
+    "definition": "Prouve l'identité d'un site et permet le HTTPS."
+  },
+  {
+    "terme": "Chiffrement asymétrique",
+    "domaine": "Crypto",
+    "definition": "Paire de clés publique / privée. Ex : RSA."
+  },
+  {
+    "terme": "Chiffrement symétrique",
+    "domaine": "Crypto",
+    "definition": "La même clé chiffre et déchiffre. Ex : AES."
+  },
+  {
+    "terme": "Cookie",
+    "domaine": "Web",
+    "definition": "Donnée stockée par le navigateur, souvent pour garder une session ouverte."
+  },
+  {
+    "terme": "CSRF",
+    "domaine": "Web",
+    "definition": "Pousser le navigateur d'une victime connectée à envoyer une requête à son insu."
+  },
+  {
+    "terme": "CTF",
+    "domaine": "Général",
+    "definition": "Compétition de défis de sécurité où l'on récupère des « flags »."
+  },
+  {
+    "terme": "CVE",
+    "domaine": "Général",
+    "definition": "Identifiant unique d'une vulnérabilité publique, ex : CVE-2021-44228."
+  },
+  {
+    "terme": "CVSS",
+    "domaine": "Général",
+    "definition": "Score de 0 à 10 de la gravité d'une vulnérabilité."
+  },
+  {
+    "terme": "DDoS",
+    "domaine": "Attaque",
+    "definition": "Saturer un service avec un énorme volume de requêtes venant de nombreuses machines."
+  },
+  {
+    "terme": "DIC (triade)",
+    "domaine": "Général",
+    "definition": "Disponibilité, Intégrité, Confidentialité : les trois objectifs de la sécurité."
+  },
+  {
+    "terme": "DMZ",
+    "domaine": "Réseau",
+    "definition": "Zone isolée pour les serveurs exposés à Internet."
+  },
+  {
+    "terme": "DNS",
+    "domaine": "Réseau",
+    "definition": "L'annuaire d'Internet : nom de domaine → adresse IP."
+  },
+  {
+    "terme": "Défense en profondeur",
+    "domaine": "Défense",
+    "definition": "Plusieurs couches de protection indépendantes."
+  },
+  {
+    "terme": "EDR",
+    "domaine": "Défense",
+    "definition": "Logiciel sur les postes qui détecte les comportements suspects et permet de réagir."
+  },
+  {
+    "terme": "Encodage",
+    "domaine": "Crypto",
+    "definition": "Changer de format (Base64, hex). Réversible par tous : pas du chiffrement."
+  },
+  {
+    "terme": "Escalade de privilèges",
+    "domaine": "Attaque",
+    "definition": "Passer d'un compte limité à un compte plus puissant."
+  },
+  {
+    "terme": "Exfiltration",
+    "domaine": "Attaque",
+    "definition": "Sortie discrète de données volées hors du réseau."
+  },
+  {
+    "terme": "Exploit",
+    "domaine": "Attaque",
+    "definition": "Code ou technique qui tire parti d'une vulnérabilité."
+  },
+  {
+    "terme": "Faux positif",
+    "domaine": "Défense",
+    "definition": "Alerte déclenchée sans vraie menace."
+  },
+  {
+    "terme": "Forensic",
+    "domaine": "Défense",
+    "definition": "Investigation numérique pour comprendre une attaque, avec des méthodes valables comme preuves."
+  },
+  {
+    "terme": "Fuzzing",
+    "domaine": "Attaque",
+    "definition": "Envoyer des milliers d'entrées variées pour provoquer des bugs."
+  },
+  {
+    "terme": "Hachage (hash)",
+    "domaine": "Crypto",
+    "definition": "Empreinte à sens unique d'une donnée."
+  },
+  {
+    "terme": "Hardening",
+    "domaine": "Défense",
+    "definition": "Réduire la surface d'attaque d'un système."
+  },
+  {
+    "terme": "Honeypot",
+    "domaine": "Défense",
+    "definition": "Leurre pour détecter et étudier les attaquants."
+  },
+  {
+    "terme": "HTTP / HTTPS",
+    "domaine": "Web",
+    "definition": "Le protocole du web ; HTTPS est sa version chiffrée."
+  },
+  {
+    "terme": "IDOR",
+    "domaine": "Web",
+    "definition": "Accéder aux données d'un autre en changeant un identifiant, faute de contrôle d'accès."
+  },
+  {
+    "terme": "IDS / IPS",
+    "domaine": "Défense",
+    "definition": "Détection (IDS) ou prévention (IPS) d'intrusion sur le réseau."
+  },
+  {
+    "terme": "Ingénierie sociale",
+    "domaine": "Attaque",
+    "definition": "Manipuler des personnes plutôt que des machines."
+  },
+  {
+    "terme": "Injection SQL",
+    "domaine": "Web",
+    "definition": "Une saisie utilisateur change le sens d'une requête SQL."
+  },
+  {
+    "terme": "IOC",
+    "domaine": "Défense",
+    "definition": "Trace technique d'une attaque (IP, hash, domaine) réutilisable pour la détection."
+  },
+  {
+    "terme": "JWT",
+    "domaine": "Web",
+    "definition": "Jeton signé qui transporte l'identité d'un utilisateur."
+  },
+  {
+    "terme": "Keylogger",
+    "domaine": "Attaque",
+    "definition": "Logiciel espion qui enregistre les touches tapées."
+  },
+  {
+    "terme": "Kill chain",
+    "domaine": "Défense",
+    "definition": "Modèle qui découpe une attaque en étapes pour savoir où la casser."
+  },
+  {
+    "terme": "LFI / RFI",
+    "domaine": "Web",
+    "definition": "Forcer une application à inclure un fichier local ou distant."
+  },
+  {
+    "terme": "Malware",
+    "domaine": "Attaque",
+    "definition": "Logiciel malveillant : virus, ver, cheval de Troie, rançongiciel…"
+  },
+  {
+    "terme": "Man-in-the-Middle",
+    "domaine": "Attaque",
+    "definition": "S'intercaler entre deux parties pour lire ou modifier leurs échanges."
+  },
+  {
+    "terme": "MITRE ATT&CK",
+    "domaine": "Défense",
+    "definition": "Base mondiale des tactiques et techniques des attaquants."
+  },
+  {
+    "terme": "Modèle OSI",
+    "domaine": "Réseau",
+    "definition": "7 couches qui décrivent la circulation des données, du câble à l'application."
+  },
+  {
+    "terme": "Moindre privilège",
+    "domaine": "Défense",
+    "definition": "Ne donner que les droits strictement nécessaires."
+  },
+  {
+    "terme": "Mouvement latéral",
+    "domaine": "Attaque",
+    "definition": "Passer d'une machine compromise à d'autres du même réseau."
+  },
+  {
+    "terme": "NIS 2",
+    "domaine": "Organisation",
+    "definition": "Directive européenne d'obligations de cybersécurité."
+  },
+  {
+    "terme": "OSINT",
+    "domaine": "Général",
+    "definition": "Renseignement à partir de sources ouvertes."
+  },
+  {
+    "terme": "OWASP",
+    "domaine": "Web",
+    "definition": "Fondation qui publie des références libres, dont le Top 10."
+  },
+  {
+    "terme": "Pare-feu",
+    "domaine": "Défense",
+    "definition": "Filtre qui autorise ou bloque le trafic selon des règles."
+  },
+  {
+    "terme": "Patch",
+    "domaine": "Défense",
+    "definition": "Mise à jour qui corrige une faille."
+  },
+  {
+    "terme": "Payload",
+    "domaine": "Attaque",
+    "definition": "La partie d'une attaque qui produit l'effet voulu."
+  },
+  {
+    "terme": "Pentest",
+    "domaine": "Général",
+    "definition": "Simulation d'attaque autorisée pour trouver les failles avant les vrais attaquants."
+  },
+  {
+    "terme": "Phishing",
+    "domaine": "Attaque",
+    "definition": "Faux message qui imite une source de confiance pour voler des identifiants."
+  },
+  {
+    "terme": "PKI",
+    "domaine": "Crypto",
+    "definition": "Infrastructure qui émet, gère et révoque les certificats."
+  },
+  {
+    "terme": "Port",
+    "domaine": "Réseau",
+    "definition": "Numéro qui identifie un service (22 SSH, 443 HTTPS)."
+  },
+  {
+    "terme": "Purple team",
+    "domaine": "Organisation",
+    "definition": "Attaquants et défenseurs qui travaillent ensemble sur la détection."
+  },
+  {
+    "terme": "Rançongiciel",
+    "domaine": "Attaque",
+    "definition": "Malware qui chiffre les données et exige une rançon."
+  },
+  {
+    "terme": "RCE",
+    "domaine": "Attaque",
+    "definition": "Exécution de code à distance : la faille la plus grave."
+  },
+  {
+    "terme": "Reconnaissance",
+    "domaine": "Attaque",
+    "definition": "Première phase : collecter un maximum d'informations sur la cible."
+  },
+  {
+    "terme": "Red team / Blue team",
+    "domaine": "Organisation",
+    "definition": "Red team simule les attaquants, blue team défend et détecte."
+  },
+  {
+    "terme": "Reverse engineering",
+    "domaine": "Général",
+    "definition": "Analyser un programme compilé sans le code source."
+  },
+  {
+    "terme": "Reverse shell",
+    "domaine": "Attaque",
+    "definition": "La machine compromise se connecte à l'attaquant et lui ouvre un terminal."
+  },
+  {
+    "terme": "RGPD",
+    "domaine": "Organisation",
+    "definition": "Règlement européen sur les données personnelles."
+  },
+  {
+    "terme": "Root / administrateur",
+    "domaine": "Système",
+    "definition": "Le compte qui a tous les droits sur une machine."
+  },
+  {
+    "terme": "Rootkit",
+    "domaine": "Attaque",
+    "definition": "Malware conçu pour rester invisible dans le système."
+  },
+  {
+    "terme": "RSSI",
+    "domaine": "Organisation",
+    "definition": "Responsable de la sécurité des systèmes d'information."
+  },
+  {
+    "terme": "Sandbox",
+    "domaine": "Défense",
+    "definition": "Environnement isolé pour exécuter un fichier suspect sans risque."
+  },
+  {
+    "terme": "Sel (salt)",
+    "domaine": "Crypto",
+    "definition": "Valeur aléatoire ajoutée avant hachage d'un mot de passe."
+  },
+  {
+    "terme": "SIEM",
+    "domaine": "Défense",
+    "definition": "Centralise les journaux et déclenche des alertes."
+  },
+  {
+    "terme": "SOC",
+    "domaine": "Organisation",
+    "definition": "L'équipe qui surveille la sécurité en continu."
+  },
+  {
+    "terme": "Spear phishing",
+    "domaine": "Attaque",
+    "definition": "Phishing ciblé et personnalisé sur une personne."
+  },
+  {
+    "terme": "SSH",
+    "domaine": "Réseau",
+    "definition": "Accès distant chiffré en ligne de commande."
+  },
+  {
+    "terme": "SSRF",
+    "domaine": "Web",
+    "definition": "Le serveur est amené à faire des requêtes non prévues, souvent vers l'interne."
+  },
+  {
+    "terme": "Stéganographie",
+    "domaine": "Crypto",
+    "definition": "Cacher un message dans un autre fichier."
+  },
+  {
+    "terme": "Supply chain attack",
+    "domaine": "Attaque",
+    "definition": "Atteindre une cible via un fournisseur ou un logiciel qu'elle utilise."
+  },
+  {
+    "terme": "Surface d'attaque",
+    "domaine": "Général",
+    "definition": "Tous les points par lesquels un système peut être attaqué."
+  },
+  {
+    "terme": "TCP / UDP",
+    "domaine": "Réseau",
+    "definition": "TCP fiable et ordonné ; UDP rapide sans garantie."
+  },
+  {
+    "terme": "Threat hunting",
+    "domaine": "Défense",
+    "definition": "Chercher activement des attaquants déjà présents."
+  },
+  {
+    "terme": "TLS",
+    "domaine": "Crypto",
+    "definition": "Protocole qui chiffre les communications, comme en HTTPS."
+  },
+  {
+    "terme": "VPN",
+    "domaine": "Réseau",
+    "definition": "Tunnel chiffré vers un réseau distant."
+  },
+  {
+    "terme": "Vulnérabilité",
+    "domaine": "Général",
+    "definition": "Faiblesse exploitable dans un logiciel, une config ou un processus."
+  },
+  {
+    "terme": "WAF",
+    "domaine": "Défense",
+    "definition": "Pare-feu spécialisé qui filtre les attaques visant les sites web."
+  },
+  {
+    "terme": "Write-up",
+    "domaine": "Général",
+    "definition": "Compte rendu de la résolution d'un challenge : la base d'un portfolio."
+  },
+  {
+    "terme": "XSS",
+    "domaine": "Web",
+    "definition": "Du JavaScript injecté s'exécute dans la page d'autres utilisateurs."
+  },
+  {
+    "terme": "Zero Trust",
+    "domaine": "Défense",
+    "definition": "Ne faire confiance à rien par défaut : chaque accès est vérifié."
+  },
+  {
+    "terme": "Zero-day",
+    "domaine": "Attaque",
+    "definition": "Faille sans correctif disponible au moment où elle est exploitée."
+  }
+]

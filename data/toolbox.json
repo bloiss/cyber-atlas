@@ -1,0 +1,408 @@
+[
+  {
+    "nom": "Nmap",
+    "categorie": "Réseau",
+    "niveau": "Essentiel",
+    "description": "Découvrir les machines, ports ouverts et services d'un réseau.",
+    "lien": "https://nmap.org"
+  },
+  {
+    "nom": "Wireshark",
+    "categorie": "Réseau",
+    "niveau": "Essentiel",
+    "description": "Capturer et lire le trafic réseau paquet par paquet.",
+    "lien": "https://www.wireshark.org"
+  },
+  {
+    "nom": "tcpdump",
+    "categorie": "Réseau",
+    "niveau": "Utile",
+    "description": "Capture de paquets en ligne de commande, sur un serveur sans interface.",
+    "lien": "https://www.tcpdump.org"
+  },
+  {
+    "nom": "Ncat / Netcat",
+    "categorie": "Réseau",
+    "niveau": "Essentiel",
+    "description": "Ouvrir une connexion TCP/UDP brute : tester un port, transférer un fichier.",
+    "lien": "https://nmap.org/ncat/"
+  },
+  {
+    "nom": "Burp Suite Community",
+    "categorie": "Web",
+    "niveau": "Essentiel",
+    "description": "Proxy qui intercepte et modifie les requêtes HTTP. L'outil n°1 du test web.",
+    "lien": "https://portswigger.net/burp/communitydownload"
+  },
+  {
+    "nom": "OWASP ZAP",
+    "categorie": "Web",
+    "niveau": "Utile",
+    "description": "Alternative open source à Burp, avec un scanner automatique.",
+    "lien": "https://www.zaproxy.org"
+  },
+  {
+    "nom": "ffuf",
+    "categorie": "Web",
+    "niveau": "Essentiel",
+    "description": "Fuzzer très rapide pour trouver pages, dossiers ou paramètres cachés.",
+    "lien": "https://github.com/ffuf/ffuf"
+  },
+  {
+    "nom": "Gobuster",
+    "categorie": "Web",
+    "niveau": "Utile",
+    "description": "Découverte de répertoires, sous-domaines et vhosts.",
+    "lien": "https://github.com/OJ/gobuster"
+  },
+  {
+    "nom": "sqlmap",
+    "categorie": "Web",
+    "niveau": "Utile",
+    "description": "Détection automatisée des injections SQL, à utiliser après avoir compris l'injection à la main.",
+    "lien": "https://sqlmap.org"
+  },
+  {
+    "nom": "Nikto",
+    "categorie": "Web",
+    "niveau": "Utile",
+    "description": "Scanner de serveur web : fichiers dangereux, versions obsolètes, mauvaises configurations.",
+    "lien": "https://github.com/sullo/nikto"
+  },
+  {
+    "nom": "Wappalyzer",
+    "categorie": "Web",
+    "niveau": "Essentiel",
+    "description": "Identifie les technologies d'un site (CMS, framework, serveur).",
+    "lien": "https://www.wappalyzer.com"
+  },
+  {
+    "nom": "PayloadsAllTheThings",
+    "categorie": "Web",
+    "niveau": "Essentiel",
+    "description": "Encyclopédie de techniques par type de faille, pour les labs.",
+    "lien": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+  },
+  {
+    "nom": "OSINT Framework",
+    "categorie": "OSINT",
+    "niveau": "Essentiel",
+    "description": "Carte cliquable de centaines d'outils OSINT.",
+    "lien": "https://osintframework.com"
+  },
+  {
+    "nom": "Wayback Machine",
+    "categorie": "OSINT",
+    "niveau": "Essentiel",
+    "description": "Anciennes versions d'un site, y compris des pages supprimées.",
+    "lien": "https://web.archive.org"
+  },
+  {
+    "nom": "crt.sh",
+    "categorie": "OSINT",
+    "niveau": "Essentiel",
+    "description": "Sous-domaines d'une organisation via les certificats TLS publics.",
+    "lien": "https://crt.sh"
+  },
+  {
+    "nom": "Shodan",
+    "categorie": "OSINT",
+    "niveau": "Utile",
+    "description": "Moteur de recherche des appareils connectés à Internet.",
+    "lien": "https://www.shodan.io"
+  },
+  {
+    "nom": "Sherlock",
+    "categorie": "OSINT",
+    "niveau": "Utile",
+    "description": "Retrouver un pseudo sur des centaines de réseaux sociaux.",
+    "lien": "https://github.com/sherlock-project/sherlock"
+  },
+  {
+    "nom": "Holehe",
+    "categorie": "OSINT",
+    "niveau": "Utile",
+    "description": "Vérifier sur quels sites une adresse e-mail est inscrite.",
+    "lien": "https://github.com/megadose/holehe"
+  },
+  {
+    "nom": "theHarvester",
+    "categorie": "OSINT",
+    "niveau": "Utile",
+    "description": "Collecter e-mails, sous-domaines et noms liés à un domaine.",
+    "lien": "https://github.com/laramies/theHarvester"
+  },
+  {
+    "nom": "Overpass Turbo",
+    "categorie": "OSINT",
+    "niveau": "Avancé",
+    "description": "Interroger OpenStreetMap pour géolocaliser une photo.",
+    "lien": "https://overpass-turbo.eu"
+  },
+  {
+    "nom": "SunCalc",
+    "categorie": "OSINT",
+    "niveau": "Utile",
+    "description": "Position du soleil selon lieu et heure : situer une photo grâce aux ombres.",
+    "lien": "https://www.suncalc.org"
+  },
+  {
+    "nom": "CyberChef",
+    "categorie": "Crypto",
+    "niveau": "Essentiel",
+    "description": "Le couteau suisse : encodages, XOR, hash, décompression en chaînant des recettes.",
+    "lien": "https://gchq.github.io/CyberChef/"
+  },
+  {
+    "nom": "dCode",
+    "categorie": "Crypto",
+    "niveau": "Essentiel",
+    "description": "Site français pour identifier et casser les chiffrements classiques.",
+    "lien": "https://www.dcode.fr"
+  },
+  {
+    "nom": "quipqiup",
+    "categorie": "Crypto",
+    "niveau": "Utile",
+    "description": "Résout automatiquement les chiffrements par substitution.",
+    "lien": "https://quipqiup.com"
+  },
+  {
+    "nom": "RsaCtfTool",
+    "categorie": "Crypto",
+    "niveau": "Avancé",
+    "description": "Attaques classiques sur des clés RSA faibles en CTF.",
+    "lien": "https://github.com/RsaCtfTool/RsaCtfTool"
+  },
+  {
+    "nom": "OpenSSL",
+    "categorie": "Crypto",
+    "niveau": "Utile",
+    "description": "Manipuler clés, certificats et chiffrement en ligne de commande.",
+    "lien": "https://www.openssl.org"
+  },
+  {
+    "nom": "Aperi'Solve",
+    "categorie": "Stéganographie",
+    "niveau": "Essentiel",
+    "description": "Analyse automatique d'une image : calques de bits, métadonnées, zsteg, steghide.",
+    "lien": "https://www.aperisolve.com"
+  },
+  {
+    "nom": "ExifTool",
+    "categorie": "Stéganographie",
+    "niveau": "Essentiel",
+    "description": "Lire les métadonnées d'un fichier (appareil, date, GPS).",
+    "lien": "https://exiftool.org"
+  },
+  {
+    "nom": "zsteg",
+    "categorie": "Stéganographie",
+    "niveau": "Utile",
+    "description": "Données cachées dans les bits de poids faible d'images PNG/BMP.",
+    "lien": "https://github.com/zed-0xff/zsteg"
+  },
+  {
+    "nom": "Steghide",
+    "categorie": "Stéganographie",
+    "niveau": "Utile",
+    "description": "Cacher ou extraire des données dans des JPEG et fichiers audio.",
+    "lien": "https://steghide.sourceforge.net"
+  },
+  {
+    "nom": "Binwalk",
+    "categorie": "Forensic",
+    "niveau": "Essentiel",
+    "description": "Repérer et extraire des fichiers imbriqués dans un autre.",
+    "lien": "https://github.com/ReFirmLabs/binwalk"
+  },
+  {
+    "nom": "Autopsy",
+    "categorie": "Forensic",
+    "niveau": "Utile",
+    "description": "Analyser une image disque : fichiers supprimés, historique, chronologie.",
+    "lien": "https://www.sleuthkit.org/autopsy/"
+  },
+  {
+    "nom": "Volatility 3",
+    "categorie": "Forensic",
+    "niveau": "Avancé",
+    "description": "Analyser un dump de mémoire vive : processus, connexions.",
+    "lien": "https://github.com/volatilityfoundation/volatility3"
+  },
+  {
+    "nom": "FTK Imager",
+    "categorie": "Forensic",
+    "niveau": "Utile",
+    "description": "Créer une copie exacte d'un disque sans le modifier.",
+    "lien": "https://www.exterro.com/ftk-downloads"
+  },
+  {
+    "nom": "Zeek",
+    "categorie": "Forensic",
+    "niveau": "Avancé",
+    "description": "Transformer une capture réseau en journaux lisibles.",
+    "lien": "https://zeek.org"
+  },
+  {
+    "nom": "Ghidra",
+    "categorie": "Reverse",
+    "niveau": "Essentiel",
+    "description": "Désassembleur et décompilateur gratuit de la NSA.",
+    "lien": "https://ghidra-sre.org"
+  },
+  {
+    "nom": "IDA Free",
+    "categorie": "Reverse",
+    "niveau": "Avancé",
+    "description": "Version gratuite du désassembleur de référence.",
+    "lien": "https://hex-rays.com/ida-free"
+  },
+  {
+    "nom": "GDB + pwndbg",
+    "categorie": "Reverse",
+    "niveau": "Avancé",
+    "description": "Débogueur Linux, avec pwndbg pour l'exploitation binaire.",
+    "lien": "https://github.com/pwndbg/pwndbg"
+  },
+  {
+    "nom": "ImHex",
+    "categorie": "Reverse",
+    "niveau": "Utile",
+    "description": "Éditeur hexadécimal moderne pour inspecter des fichiers.",
+    "lien": "https://imhex.werwolv.net"
+  },
+  {
+    "nom": "jadx",
+    "categorie": "Reverse",
+    "niveau": "Utile",
+    "description": "Décompiler une application Android en Java lisible.",
+    "lien": "https://github.com/skylot/jadx"
+  },
+  {
+    "nom": "Hashcat",
+    "categorie": "Mots de passe",
+    "niveau": "Essentiel",
+    "description": "Casser des hashs avec la carte graphique, en lab ou en CTF.",
+    "lien": "https://hashcat.net/hashcat/"
+  },
+  {
+    "nom": "John the Ripper",
+    "categorie": "Mots de passe",
+    "niveau": "Essentiel",
+    "description": "Casser des hashs et extraire ceux de fichiers protégés.",
+    "lien": "https://www.openwall.com/john/"
+  },
+  {
+    "nom": "SecLists",
+    "categorie": "Mots de passe",
+    "niveau": "Essentiel",
+    "description": "La collection de wordlists de référence.",
+    "lien": "https://github.com/danielmiessler/SecLists"
+  },
+  {
+    "nom": "Name-That-Hash",
+    "categorie": "Mots de passe",
+    "niveau": "Utile",
+    "description": "Identifier le type d'un hash (MD5, SHA, bcrypt…).",
+    "lien": "https://github.com/HashPals/Name-That-Hash"
+  },
+  {
+    "nom": "CrackStation",
+    "categorie": "Mots de passe",
+    "niveau": "Utile",
+    "description": "Recherche instantanée de hashs courants non salés.",
+    "lien": "https://crackstation.net"
+  },
+  {
+    "nom": "HackTricks",
+    "categorie": "Pentest",
+    "niveau": "Essentiel",
+    "description": "Le wiki du pentest : méthodologie par service et par technique.",
+    "lien": "https://book.hacktricks.xyz"
+  },
+  {
+    "nom": "GTFOBins",
+    "categorie": "Pentest",
+    "niveau": "Essentiel",
+    "description": "Binaires Unix légitimes détournables pour élever ses privilèges.",
+    "lien": "https://gtfobins.github.io"
+  },
+  {
+    "nom": "LOLBAS",
+    "categorie": "Pentest",
+    "niveau": "Utile",
+    "description": "L'équivalent de GTFOBins pour Windows.",
+    "lien": "https://lolbas-project.github.io"
+  },
+  {
+    "nom": "PEASS-ng",
+    "categorie": "Pentest",
+    "niveau": "Utile",
+    "description": "Scripts linPEAS / winPEAS qui listent les pistes d'élévation de privilèges.",
+    "lien": "https://github.com/peass-ng/PEASS-ng"
+  },
+  {
+    "nom": "RevShells",
+    "categorie": "Pentest",
+    "niveau": "Utile",
+    "description": "Générateur de commandes de reverse shell pour les labs.",
+    "lien": "https://www.revshells.com"
+  },
+  {
+    "nom": "MITRE ATT&CK",
+    "categorie": "Défense",
+    "niveau": "Essentiel",
+    "description": "La matrice mondiale des techniques d'attaque réelles.",
+    "lien": "https://attack.mitre.org"
+  },
+  {
+    "nom": "VirusTotal",
+    "categorie": "Défense",
+    "niveau": "Essentiel",
+    "description": "Analyser un fichier, une URL ou un hash avec des dizaines d'antivirus.",
+    "lien": "https://www.virustotal.com"
+  },
+  {
+    "nom": "Wazuh",
+    "categorie": "Défense",
+    "niveau": "Avancé",
+    "description": "SIEM open source : bon projet perso pour un portfolio blue team.",
+    "lien": "https://wazuh.com"
+  },
+  {
+    "nom": "Sysmon",
+    "categorie": "Défense",
+    "niveau": "Avancé",
+    "description": "Journalisation avancée de Windows, la base de la détection.",
+    "lien": "https://learn.microsoft.com/sysinternals/downloads/sysmon"
+  },
+  {
+    "nom": "Kali Linux",
+    "categorie": "Lab",
+    "niveau": "Essentiel",
+    "description": "Distribution avec la plupart des outils offensifs. En machine virtuelle.",
+    "lien": "https://www.kali.org"
+  },
+  {
+    "nom": "VirtualBox",
+    "categorie": "Lab",
+    "niveau": "Essentiel",
+    "description": "Machines virtuelles gratuites pour tester sans risque.",
+    "lien": "https://www.virtualbox.org"
+  },
+  {
+    "nom": "Docker",
+    "categorie": "Lab",
+    "niveau": "Utile",
+    "description": "Lancer en une commande des applis vulnérables d'entraînement.",
+    "lien": "https://www.docker.com"
+  },
+  {
+    "nom": "Exegol",
+    "categorie": "Lab",
+    "niveau": "Avancé",
+    "description": "Environnement offensif français sous Docker, alternative à Kali.",
+    "lien": "https://github.com/ThePorgs/Exegol"
+  }
+]

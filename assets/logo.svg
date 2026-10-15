@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200" width="640" height="200" role="img" aria-label="Cyber Atlas">
+  <rect width="640" height="200" rx="24" fill="#0b1220"/>
+  <g transform="translate(100 100)" fill="none" stroke-linecap="round">
+    <circle r="62" stroke="#1f6feb" stroke-width="3"/>
+    <ellipse rx="62" ry="22" stroke="#2f81f7" stroke-width="2" opacity=".75"/>
+    <ellipse rx="22" ry="62" stroke="#2f81f7" stroke-width="2" opacity=".75"/>
+    <line x1="-62" y1="0" x2="62" y2="0" stroke="#2f81f7" stroke-width="1.5" opacity=".5"/>
+    <ellipse rx="86" ry="30" transform="rotate(-24)" stroke="#3fb950" stroke-width="2.5"/>
+    <circle cx="70" cy="-46" r="8" fill="#3fb950" stroke="none"/>
+    <path d="M-16 4 l10 10 l22 -26" stroke="#e6edf3" stroke-width="7"/>
+  </g>
+  <text x="212" y="110" font-family="Inter, Segoe UI, Roboto, Arial, sans-serif" font-size="58" font-weight="800" fill="#e6edf3" letter-spacing="-1">Cyber Atlas</text>
+  <text x="214" y="146" font-family="Inter, Segoe UI, Roboto, Arial, sans-serif" font-size="17" fill="#8b949e" letter-spacing="1.5">PROGRESSER EN CYBER, CHAQUE JOUR</text>
+</svg>

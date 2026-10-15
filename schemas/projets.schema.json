@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Projets et write-ups",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["titre", "type", "niveau", "date", "resume", "lien"],
+    "additionalProperties": false,
+    "properties": {
+      "titre": { "type": "string" },
+      "type": { "type": "string", "enum": ["Write-up CTF", "Lab", "Projet perso", "Rapport d'incident"] },
+      "niveau": { "type": "string", "enum": ["Débutant", "Intermédiaire", "Avancé"] },
+      "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}$", "description": "Année-mois, pour trier du plus récent au plus ancien" },
+      "resume": { "type": "string", "description": "Une ou deux phrases : ce qui a été fait et ce qui en a été retenu" },
+      "outils": { "type": "array", "items": { "type": "string" } },
+      "lien": {
+        "type": "string",
+        "description": "Vers le write-up ou le dépôt GitHub. Laisse vide si pas encore publié.",
+        "anyOf": [{ "const": "" }, { "format": "uri", "pattern": "^https://" }]
+      }
+    }
+  }
+}

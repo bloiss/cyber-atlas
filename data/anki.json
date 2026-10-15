@@ -1,0 +1,747 @@
+[
+  {
+    "question": "Port de FTP ?",
+    "reponse": "21 (transfert de fichiers, en clair)",
+    "theme": "Ports"
+  },
+  {
+    "question": "Port de SSH ?",
+    "reponse": "22 (accès distant chiffré)",
+    "theme": "Ports"
+  },
+  {
+    "question": "Port de Telnet ?",
+    "reponse": "23 (accès distant en clair, à bannir)",
+    "theme": "Ports"
+  },
+  {
+    "question": "Port de SMTP ?",
+    "reponse": "25 (envoi d'e-mails)",
+    "theme": "Ports"
+  },
+  {
+    "question": "Port de DNS ?",
+    "reponse": "53",
+    "theme": "Ports"
+  },
+  {
+    "question": "Port de HTTP ?",
+    "reponse": "80",
+    "theme": "Ports"
+  },
+  {
+    "question": "Port de HTTPS ?",
+    "reponse": "443",
+    "theme": "Ports"
+  },
+  {
+    "question": "Port de POP3 ?",
+    "reponse": "110",
+    "theme": "Ports"
+  },
+  {
+    "question": "Port d'IMAP ?",
+    "reponse": "143",
+    "theme": "Ports"
+  },
+  {
+    "question": "Ports de SMB ?",
+    "reponse": "139 et 445 (partage de fichiers Windows)",
+    "theme": "Ports"
+  },
+  {
+    "question": "Ports de LDAP et LDAPS ?",
+    "reponse": "389 et 636",
+    "theme": "Ports"
+  },
+  {
+    "question": "Port de Kerberos ?",
+    "reponse": "88",
+    "theme": "Ports"
+  },
+  {
+    "question": "Port de MySQL ?",
+    "reponse": "3306",
+    "theme": "Ports"
+  },
+  {
+    "question": "Port de PostgreSQL ?",
+    "reponse": "5432",
+    "theme": "Ports"
+  },
+  {
+    "question": "Port de RDP ?",
+    "reponse": "3389 (bureau à distance Windows)",
+    "theme": "Ports"
+  },
+  {
+    "question": "Port de Redis ?",
+    "reponse": "6379",
+    "theme": "Ports"
+  },
+  {
+    "question": "Port de SNMP ?",
+    "reponse": "161 (UDP)",
+    "theme": "Ports"
+  },
+  {
+    "question": "Port HTTP alternatif courant ?",
+    "reponse": "8080",
+    "theme": "Ports"
+  },
+  {
+    "question": "Port de MS SQL Server ?",
+    "reponse": "1433",
+    "theme": "Ports"
+  },
+  {
+    "question": "Port de NTP ?",
+    "reponse": "123 (UDP, synchronisation de l'heure)",
+    "theme": "Ports"
+  },
+  {
+    "question": "Méthode HTTP pour lire une ressource ?",
+    "reponse": "GET",
+    "theme": "Web et HTTP"
+  },
+  {
+    "question": "Méthode HTTP pour créer une ressource ?",
+    "reponse": "POST",
+    "theme": "Web et HTTP"
+  },
+  {
+    "question": "Différence entre PUT et PATCH ?",
+    "reponse": "PUT remplace la ressource entière, PATCH la modifie en partie",
+    "theme": "Web et HTTP"
+  },
+  {
+    "question": "Code HTTP 200 ?",
+    "reponse": "OK, succès",
+    "theme": "Web et HTTP"
+  },
+  {
+    "question": "Codes HTTP 301 et 302 ?",
+    "reponse": "Redirection permanente (301) ou temporaire (302)",
+    "theme": "Web et HTTP"
+  },
+  {
+    "question": "Code HTTP 401 ?",
+    "reponse": "Non authentifié",
+    "theme": "Web et HTTP"
+  },
+  {
+    "question": "Code HTTP 403 ?",
+    "reponse": "Interdit : l'accès est refusé",
+    "theme": "Web et HTTP"
+  },
+  {
+    "question": "Code HTTP 404 ?",
+    "reponse": "Ressource introuvable",
+    "theme": "Web et HTTP"
+  },
+  {
+    "question": "Code HTTP 500 ?",
+    "reponse": "Erreur interne du serveur",
+    "theme": "Web et HTTP"
+  },
+  {
+    "question": "À quoi sert un cookie de session ?",
+    "reponse": "À garder l'utilisateur connecté entre deux requêtes",
+    "theme": "Web et HTTP"
+  },
+  {
+    "question": "Que fait l'attribut de cookie HttpOnly ?",
+    "reponse": "Il empêche JavaScript de lire le cookie",
+    "theme": "Web et HTTP"
+  },
+  {
+    "question": "Que fait l'attribut de cookie Secure ?",
+    "reponse": "Le cookie n'est envoyé qu'en HTTPS",
+    "theme": "Web et HTTP"
+  },
+  {
+    "question": "Que fait l'attribut de cookie SameSite ?",
+    "reponse": "Il limite l'envoi du cookie depuis d'autres sites, ce qui protège contre la CSRF",
+    "theme": "Web et HTTP"
+  },
+  {
+    "question": "Qu'est-ce que la Same-Origin Policy ?",
+    "reponse": "Règle du navigateur qui empêche un site de lire les données d'un autre (origine = protocole + domaine + port)",
+    "theme": "Web et HTTP"
+  },
+  {
+    "question": "À quoi sert l'en-tête Content-Security-Policy ?",
+    "reponse": "À limiter les sources de scripts autorisées sur une page",
+    "theme": "Web et HTTP"
+  },
+  {
+    "question": "À quoi sert l'en-tête HSTS ?",
+    "reponse": "À forcer le navigateur à toujours utiliser HTTPS pour ce site",
+    "theme": "Web et HTTP"
+  },
+  {
+    "question": "OWASP 2025 — A01 ?",
+    "reponse": "Contrôle d'accès défaillant",
+    "theme": "OWASP Top 10 2025"
+  },
+  {
+    "question": "OWASP 2025 — A02 ?",
+    "reponse": "Mauvaise configuration de sécurité",
+    "theme": "OWASP Top 10 2025"
+  },
+  {
+    "question": "OWASP 2025 — A03 ?",
+    "reponse": "Défaillances de la chaîne d'approvisionnement logicielle",
+    "theme": "OWASP Top 10 2025"
+  },
+  {
+    "question": "OWASP 2025 — A04 ?",
+    "reponse": "Défaillances cryptographiques",
+    "theme": "OWASP Top 10 2025"
+  },
+  {
+    "question": "OWASP 2025 — A05 ?",
+    "reponse": "Injection",
+    "theme": "OWASP Top 10 2025"
+  },
+  {
+    "question": "OWASP 2025 — A06 ?",
+    "reponse": "Conception non sécurisée",
+    "theme": "OWASP Top 10 2025"
+  },
+  {
+    "question": "OWASP 2025 — A07 ?",
+    "reponse": "Défaillances d'authentification",
+    "theme": "OWASP Top 10 2025"
+  },
+  {
+    "question": "OWASP 2025 — A08 ?",
+    "reponse": "Défaillances d'intégrité du logiciel ou des données",
+    "theme": "OWASP Top 10 2025"
+  },
+  {
+    "question": "OWASP 2025 — A09 ?",
+    "reponse": "Défaillances de journalisation et d'alerte",
+    "theme": "OWASP Top 10 2025"
+  },
+  {
+    "question": "OWASP 2025 — A10 ?",
+    "reponse": "Mauvaise gestion des conditions exceptionnelles",
+    "theme": "OWASP Top 10 2025"
+  },
+  {
+    "question": "Qu'est-ce qu'une injection SQL ?",
+    "reponse": "Une saisie utilisateur change le sens d'une requête SQL",
+    "theme": "Failles web et protections"
+  },
+  {
+    "question": "Meilleure protection contre l'injection SQL ?",
+    "reponse": "Les requêtes préparées (paramétrées), partout",
+    "theme": "Failles web et protections"
+  },
+  {
+    "question": "Qu'est-ce qu'une XSS ?",
+    "reponse": "Du JavaScript injecté s'exécute dans la page d'autres utilisateurs",
+    "theme": "Failles web et protections"
+  },
+  {
+    "question": "Les 3 types de XSS ?",
+    "reponse": "Réfléchie, stockée, basée sur le DOM",
+    "theme": "Failles web et protections"
+  },
+  {
+    "question": "Protection principale contre la XSS ?",
+    "reponse": "Encoder les sorties selon le contexte, plus une Content-Security-Policy",
+    "theme": "Failles web et protections"
+  },
+  {
+    "question": "Qu'est-ce qu'une CSRF ?",
+    "reponse": "Une requête envoyée à l'insu d'un utilisateur connecté",
+    "theme": "Failles web et protections"
+  },
+  {
+    "question": "Protections contre la CSRF ?",
+    "reponse": "Jeton anti-CSRF et cookies SameSite",
+    "theme": "Failles web et protections"
+  },
+  {
+    "question": "Qu'est-ce qu'une IDOR ?",
+    "reponse": "Accès aux données d'un autre utilisateur faute de contrôle d'accès sur l'identifiant",
+    "theme": "Failles web et protections"
+  },
+  {
+    "question": "Protection contre l'IDOR ?",
+    "reponse": "Vérifier côté serveur, à chaque requête, que l'utilisateur a le droit d'accéder à l'objet",
+    "theme": "Failles web et protections"
+  },
+  {
+    "question": "Qu'est-ce qu'une SSRF ?",
+    "reponse": "Le serveur est amené à faire des requêtes non prévues, souvent vers le réseau interne",
+    "theme": "Failles web et protections"
+  },
+  {
+    "question": "Protection contre la SSRF ?",
+    "reponse": "Liste blanche des destinations autorisées et isolement réseau du serveur",
+    "theme": "Failles web et protections"
+  },
+  {
+    "question": "Pourquoi ne jamais faire confiance au côté client ?",
+    "reponse": "Tout ce qui vient du navigateur peut être modifié ; la validation se fait côté serveur",
+    "theme": "Failles web et protections"
+  },
+  {
+    "question": "Comment stocker un mot de passe ?",
+    "reponse": "Avec un hash lent et salé (bcrypt, Argon2), jamais en clair ni en MD5",
+    "theme": "Failles web et protections"
+  },
+  {
+    "question": "Afficher le dossier courant ?",
+    "reponse": "pwd",
+    "theme": "Linux"
+  },
+  {
+    "question": "Lister tous les fichiers, cachés compris, avec détails ?",
+    "reponse": "ls -la",
+    "theme": "Linux"
+  },
+  {
+    "question": "Chercher un texte dans les fichiers d'un dossier, sans tenir compte de la casse ?",
+    "reponse": "grep -ri \"texte\" dossier/",
+    "theme": "Linux"
+  },
+  {
+    "question": "Chercher des fichiers par nom ?",
+    "reponse": "find /chemin -name \"motif\"",
+    "theme": "Linux"
+  },
+  {
+    "question": "Que fait 2>/dev/null ?",
+    "reponse": "Il masque les messages d'erreur",
+    "theme": "Linux"
+  },
+  {
+    "question": "Afficher les 20 premières lignes d'un fichier ?",
+    "reponse": "head -n 20 fichier",
+    "theme": "Linux"
+  },
+  {
+    "question": "Suivre un fichier de log en direct ?",
+    "reponse": "tail -f fichier",
+    "theme": "Linux"
+  },
+  {
+    "question": "Qui suis-je et dans quels groupes ?",
+    "reponse": "id",
+    "theme": "Linux"
+  },
+  {
+    "question": "Voir ce que je peux lancer avec sudo ?",
+    "reponse": "sudo -l",
+    "theme": "Linux"
+  },
+  {
+    "question": "Lister les processus ?",
+    "reponse": "ps aux",
+    "theme": "Linux"
+  },
+  {
+    "question": "Lister les ports en écoute ?",
+    "reponse": "ss -tulpn",
+    "theme": "Linux"
+  },
+  {
+    "question": "Changer les permissions d'un fichier ?",
+    "reponse": "chmod",
+    "theme": "Linux"
+  },
+  {
+    "question": "Changer le propriétaire d'un fichier ?",
+    "reponse": "chown",
+    "theme": "Linux"
+  },
+  {
+    "question": "Que signifie la permission 750 ?",
+    "reponse": "Propriétaire : rwx, groupe : r-x, autres : aucun droit",
+    "theme": "Linux"
+  },
+  {
+    "question": "Que signifie la permission 644 ?",
+    "reponse": "Propriétaire : rw-, groupe et autres : r--",
+    "theme": "Linux"
+  },
+  {
+    "question": "Identifier le type d'un fichier ?",
+    "reponse": "file fichier",
+    "theme": "Linux"
+  },
+  {
+    "question": "Extraire le texte lisible d'un binaire ?",
+    "reponse": "strings fichier",
+    "theme": "Linux"
+  },
+  {
+    "question": "Afficher une requête HTTP avec ses en-têtes ?",
+    "reponse": "curl -i URL",
+    "theme": "Linux"
+  },
+  {
+    "question": "Où sont stockés les comptes utilisateurs ?",
+    "reponse": "/etc/passwd",
+    "theme": "Linux"
+  },
+  {
+    "question": "Où sont stockés les hashs des mots de passe ?",
+    "reponse": "/etc/shadow (lisible par root seulement)",
+    "theme": "Linux"
+  },
+  {
+    "question": "Dossier des journaux système ?",
+    "reponse": "/var/log",
+    "theme": "Linux"
+  },
+  {
+    "question": "Rediriger la sortie d'une commande vers une autre ?",
+    "reponse": "Le pipe : commande1 | commande2",
+    "theme": "Linux"
+  },
+  {
+    "question": "Que fait le bit SUID ?",
+    "reponse": "Le programme s'exécute avec les droits de son propriétaire, pas de celui qui le lance",
+    "theme": "Linux"
+  },
+  {
+    "question": "Afficher l'historique des commandes ?",
+    "reponse": "history",
+    "theme": "Linux"
+  },
+  {
+    "question": "Afficher l'aide d'une commande ?",
+    "reponse": "man commande",
+    "theme": "Linux"
+  },
+  {
+    "question": "Les 7 couches du modèle OSI, de bas en haut ?",
+    "reponse": "Physique, Liaison, Réseau, Transport, Session, Présentation, Application",
+    "theme": "Réseau"
+  },
+  {
+    "question": "Couche OSI d'une adresse IP ?",
+    "reponse": "3 — Réseau",
+    "theme": "Réseau"
+  },
+  {
+    "question": "Couche OSI de TCP et UDP ?",
+    "reponse": "4 — Transport",
+    "theme": "Réseau"
+  },
+  {
+    "question": "Couche OSI d'une adresse MAC ?",
+    "reponse": "2 — Liaison",
+    "theme": "Réseau"
+  },
+  {
+    "question": "Différence TCP / UDP ?",
+    "reponse": "TCP : fiable, ordonné, avec connexion. UDP : rapide, sans garantie",
+    "theme": "Réseau"
+  },
+  {
+    "question": "Les 3 étapes du handshake TCP ?",
+    "reponse": "SYN, SYN-ACK, ACK",
+    "theme": "Réseau"
+  },
+  {
+    "question": "Rôle du DNS ?",
+    "reponse": "Traduire un nom de domaine en adresse IP",
+    "theme": "Réseau"
+  },
+  {
+    "question": "Rôle du DHCP ?",
+    "reponse": "Attribuer automatiquement une adresse IP aux machines",
+    "theme": "Réseau"
+  },
+  {
+    "question": "Rôle d'ARP ?",
+    "reponse": "Trouver l'adresse MAC qui correspond à une adresse IP sur le réseau local",
+    "theme": "Réseau"
+  },
+  {
+    "question": "Plages d'IP privées IPv4 ?",
+    "reponse": "10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16",
+    "theme": "Réseau"
+  },
+  {
+    "question": "Adresse de loopback ?",
+    "reponse": "127.0.0.1 (localhost)",
+    "theme": "Réseau"
+  },
+  {
+    "question": "Combien d'adresses dans un /24 ?",
+    "reponse": "256 (254 utilisables pour des machines)",
+    "theme": "Réseau"
+  },
+  {
+    "question": "Qu'est-ce que le NAT ?",
+    "reponse": "Traduction d'adresses : plusieurs machines privées partagent une IP publique",
+    "theme": "Réseau"
+  },
+  {
+    "question": "Rôle d'un pare-feu ?",
+    "reponse": "Autoriser ou bloquer le trafic selon des règles",
+    "theme": "Réseau"
+  },
+  {
+    "question": "Qu'est-ce qu'une DMZ ?",
+    "reponse": "Zone isolée pour les serveurs exposés à Internet",
+    "theme": "Réseau"
+  },
+  {
+    "question": "Qu'est-ce qu'un VLAN ?",
+    "reponse": "Un réseau local virtuel qui sépare logiquement des machines sur le même équipement",
+    "theme": "Réseau"
+  },
+  {
+    "question": "Rôle d'un VPN ?",
+    "reponse": "Créer un tunnel chiffré vers un réseau distant",
+    "theme": "Réseau"
+  },
+  {
+    "question": "Outil pour capturer et lire le trafic réseau ?",
+    "reponse": "Wireshark (ou tcpdump en ligne de commande)",
+    "theme": "Réseau"
+  },
+  {
+    "question": "Commande pour tester si une machine répond ?",
+    "reponse": "ping",
+    "theme": "Réseau"
+  },
+  {
+    "question": "Commande pour voir le chemin réseau jusqu'à une machine ?",
+    "reponse": "traceroute (tracert sous Windows)",
+    "theme": "Réseau"
+  },
+  {
+    "question": "Encodage, hachage, chiffrement : lequel est réversible sans clé ?",
+    "reponse": "L'encodage (Base64, hex) : ce n'est pas de la sécurité",
+    "theme": "Crypto"
+  },
+  {
+    "question": "Propriété principale d'une fonction de hachage ?",
+    "reponse": "Sens unique : impossible de retrouver la donnée à partir du hash",
+    "theme": "Crypto"
+  },
+  {
+    "question": "Qu'est-ce qu'une collision de hash ?",
+    "reponse": "Deux données différentes qui donnent le même hash",
+    "theme": "Crypto"
+  },
+  {
+    "question": "Pourquoi MD5 et SHA-1 sont déconseillés ?",
+    "reponse": "Des collisions sont réalisables en pratique",
+    "theme": "Crypto"
+  },
+  {
+    "question": "À quoi sert un sel (salt) ?",
+    "reponse": "À rendre uniques les hashs de mots de passe identiques et contrer les tables précalculées",
+    "theme": "Crypto"
+  },
+  {
+    "question": "Chiffrement symétrique : principe et exemple ?",
+    "reponse": "Une seule clé pour chiffrer et déchiffrer. Ex : AES",
+    "theme": "Crypto"
+  },
+  {
+    "question": "Chiffrement asymétrique : principe et exemple ?",
+    "reponse": "Clé publique et clé privée. Ex : RSA, courbes elliptiques",
+    "theme": "Crypto"
+  },
+  {
+    "question": "Avec quelle clé chiffre-t-on un message destiné à Alice ?",
+    "reponse": "Avec la clé publique d'Alice",
+    "theme": "Crypto"
+  },
+  {
+    "question": "Avec quelle clé Alice signe-t-elle un document ?",
+    "reponse": "Avec sa clé privée",
+    "theme": "Crypto"
+  },
+  {
+    "question": "À quoi sert un certificat TLS ?",
+    "reponse": "À prouver l'identité d'un site et permettre le chiffrement HTTPS",
+    "theme": "Crypto"
+  },
+  {
+    "question": "Qu'est-ce qu'une PKI ?",
+    "reponse": "L'infrastructure qui émet, gère et révoque les certificats",
+    "theme": "Crypto"
+  },
+  {
+    "question": "Qu'est-ce qu'un HMAC ?",
+    "reponse": "Un hash combiné à une clé secrète, pour garantir intégrité et authenticité",
+    "theme": "Crypto"
+  },
+  {
+    "question": "Qu'apporte la confidentialité persistante (forward secrecy) ?",
+    "reponse": "Le vol futur d'une clé ne permet pas de déchiffrer les échanges passés",
+    "theme": "Crypto"
+  },
+  {
+    "question": "Hash recommandé pour les mots de passe ?",
+    "reponse": "Argon2 ou bcrypt",
+    "theme": "Crypto"
+  },
+  {
+    "question": "Qu'est-ce que la stéganographie ?",
+    "reponse": "Cacher un message dans un autre fichier, sans que cela se voie",
+    "theme": "Crypto"
+  },
+  {
+    "question": "Que signifie la triade DIC ?",
+    "reponse": "Disponibilité, Intégrité, Confidentialité",
+    "theme": "Défense et organisation"
+  },
+  {
+    "question": "Principe du moindre privilège ?",
+    "reponse": "Chaque compte n'a que les droits strictement nécessaires",
+    "theme": "Défense et organisation"
+  },
+  {
+    "question": "Défense en profondeur ?",
+    "reponse": "Plusieurs couches de protection indépendantes",
+    "theme": "Défense et organisation"
+  },
+  {
+    "question": "Rôle d'un SOC ?",
+    "reponse": "Surveiller la sécurité en continu et réagir aux alertes",
+    "theme": "Défense et organisation"
+  },
+  {
+    "question": "Rôle d'un SIEM ?",
+    "reponse": "Centraliser les journaux et déclencher des alertes",
+    "theme": "Défense et organisation"
+  },
+  {
+    "question": "Rôle d'un EDR ?",
+    "reponse": "Détecter les comportements suspects sur les postes et permettre d'y répondre",
+    "theme": "Défense et organisation"
+  },
+  {
+    "question": "Qu'est-ce qu'un IOC ?",
+    "reponse": "Une trace technique d'attaque (IP, hash, domaine) réutilisable pour la détection",
+    "theme": "Défense et organisation"
+  },
+  {
+    "question": "Qu'est-ce que MITRE ATT&CK ?",
+    "reponse": "La matrice mondiale des tactiques et techniques d'attaque observées",
+    "theme": "Défense et organisation"
+  },
+  {
+    "question": "Qu'est-ce qu'un faux positif ?",
+    "reponse": "Une alerte déclenchée sans vraie menace",
+    "theme": "Défense et organisation"
+  },
+  {
+    "question": "Qu'est-ce que le threat hunting ?",
+    "reponse": "Chercher activement des attaquants déjà présents, sans attendre d'alerte",
+    "theme": "Défense et organisation"
+  },
+  {
+    "question": "Qu'est-ce que le Zero Trust ?",
+    "reponse": "Ne faire confiance à rien par défaut : chaque accès est vérifié",
+    "theme": "Défense et organisation"
+  },
+  {
+    "question": "Qu'est-ce qu'une CVE ?",
+    "reponse": "L'identifiant unique d'une vulnérabilité publique",
+    "theme": "Défense et organisation"
+  },
+  {
+    "question": "Que mesure le CVSS ?",
+    "reponse": "La gravité d'une vulnérabilité, de 0 à 10",
+    "theme": "Défense et organisation"
+  },
+  {
+    "question": "Qu'est-ce qu'un zero-day ?",
+    "reponse": "Une faille sans correctif disponible au moment où elle est exploitée",
+    "theme": "Défense et organisation"
+  },
+  {
+    "question": "La règle de sauvegarde 3-2-1 ?",
+    "reponse": "3 copies, sur 2 supports différents, dont 1 hors ligne",
+    "theme": "Défense et organisation"
+  },
+  {
+    "question": "Premier réflexe en cas d'incident sur un poste ?",
+    "reponse": "Le déconnecter du réseau sans l'éteindre, et prévenir",
+    "theme": "Défense et organisation"
+  },
+  {
+    "question": "Que dit l'article 323-1 du Code pénal ?",
+    "reponse": "Il réprime l'accès ou le maintien frauduleux dans un système informatique",
+    "theme": "Défense et organisation"
+  },
+  {
+    "question": "Qu'est-ce que NIS 2 ?",
+    "reponse": "Directive européenne qui impose des obligations de cybersécurité à de nombreuses organisations",
+    "theme": "Défense et organisation"
+  },
+  {
+    "question": "Qu'est-ce que l'ANSSI ?",
+    "reponse": "L'autorité nationale française de cybersécurité",
+    "theme": "Défense et organisation"
+  },
+  {
+    "question": "Qu'est-ce qu'un bug bounty ?",
+    "reponse": "Un programme qui rémunère le signalement de failles dans un périmètre autorisé",
+    "theme": "Défense et organisation"
+  },
+  {
+    "question": "Qu'est-ce que Stuxnet ?",
+    "reponse": "La première cyberarme connue, qui visait des centrifugeuses iraniennes (découverte en 2010)",
+    "theme": "Culture cyber"
+  },
+  {
+    "question": "Quelle faille WannaCry exploitait-il ?",
+    "reponse": "Une faille de SMBv1 (MS17-010), corrigée deux mois avant l'attaque de mai 2017",
+    "theme": "Culture cyber"
+  },
+  {
+    "question": "Qu'est-ce que Log4Shell ?",
+    "reponse": "Une faille critique de la bibliothèque Java Log4j, découverte fin 2021",
+    "theme": "Culture cyber"
+  },
+  {
+    "question": "Qu'est-ce que NotPetya ?",
+    "reponse": "Un malware destructeur de 2017, déguisé en rançongiciel, qui a touché de nombreuses entreprises",
+    "theme": "Culture cyber"
+  },
+  {
+    "question": "Qu'est-ce que Heartbleed ?",
+    "reponse": "Une faille d'OpenSSL de 2014 qui laissait lire la mémoire des serveurs",
+    "theme": "Culture cyber"
+  },
+  {
+    "question": "Qu'est-ce qu'une attaque par la chaîne d'approvisionnement ?",
+    "reponse": "Atteindre une cible via un fournisseur ou un logiciel qu'elle utilise (ex : SolarWinds, 2020)",
+    "theme": "Culture cyber"
+  },
+  {
+    "question": "Qu'est-ce qu'un APT ?",
+    "reponse": "Un groupe d'attaquants organisé, souvent étatique, discret et persistant",
+    "theme": "Culture cyber"
+  },
+  {
+    "question": "Qu'est-ce qu'un CTF ?",
+    "reponse": "Une compétition de défis de sécurité où l'on récupère des « flags »",
+    "theme": "Culture cyber"
+  },
+  {
+    "question": "Qu'est-ce que le FCSC ?",
+    "reponse": "Le France Cybersecurity Challenge, organisé par l'ANSSI",
+    "theme": "Culture cyber"
+  },
+  {
+    "question": "Quand a lieu l'European Cyber Week à Rennes ?",
+    "reponse": "En novembre, chaque année",
+    "theme": "Culture cyber"
+  }
+]

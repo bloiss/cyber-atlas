@@ -1,0 +1,303 @@
+[
+  {
+    "titre": "Micode",
+    "format": "YouTube",
+    "themes": [
+      "Culture cyber"
+    ],
+    "langue": "FR",
+    "lien": "https://www.youtube.com/@Micode",
+    "pourquoi": "Grandes cyberattaques racontées comme des enquêtes."
+  },
+  {
+    "titre": "Underscore_",
+    "format": "YouTube",
+    "themes": [
+      "Culture cyber"
+    ],
+    "langue": "FR",
+    "lien": "https://www.youtube.com/@Underscore_",
+    "pourquoi": "L'émission tech de référence en France, avec des experts invités."
+  },
+  {
+    "titre": "Grafikart",
+    "format": "YouTube",
+    "themes": [
+      "Web / SQL"
+    ],
+    "langue": "FR",
+    "lien": "https://www.youtube.com/@grafikart",
+    "pourquoi": "Bases du web, SQL, PHP : comprendre un site avant de le sécuriser."
+  },
+  {
+    "titre": "Cocadmin",
+    "format": "YouTube",
+    "themes": [
+      "Linux / Réseau"
+    ],
+    "langue": "FR",
+    "lien": "https://www.youtube.com/@cocadmin",
+    "pourquoi": "Admin système et réseau expliqués simplement."
+  },
+  {
+    "titre": "NetworkChuck",
+    "format": "YouTube",
+    "themes": [
+      "Linux / Réseau"
+    ],
+    "langue": "EN",
+    "lien": "https://www.youtube.com/@NetworkChuck",
+    "pourquoi": "Réseau, Linux et hacking, très motivant pour démarrer."
+  },
+  {
+    "titre": "Professor Messer",
+    "format": "YouTube",
+    "themes": [
+      "Linux / Réseau",
+      "Défense"
+    ],
+    "langue": "EN",
+    "lien": "https://www.professormesser.com",
+    "pourquoi": "Cours complets et gratuits Network+ et Security+."
+  },
+  {
+    "titre": "John Hammond",
+    "format": "YouTube",
+    "themes": [
+      "Hacking / CTF"
+    ],
+    "langue": "EN",
+    "lien": "https://www.youtube.com/@_JohnHammond",
+    "pourquoi": "CTF résolus en direct et analyses de malwares."
+  },
+  {
+    "titre": "IppSec",
+    "format": "YouTube",
+    "themes": [
+      "Hacking / CTF"
+    ],
+    "langue": "EN",
+    "lien": "https://www.youtube.com/@ippsec",
+    "pourquoi": "Walkthroughs des machines Hack The Box : l'école de la méthodologie."
+  },
+  {
+    "titre": "LiveOverflow",
+    "format": "YouTube",
+    "themes": [
+      "Hacking / CTF"
+    ],
+    "langue": "EN",
+    "lien": "https://www.youtube.com/@LiveOverflow",
+    "pourquoi": "Comprendre les failles en profondeur plutôt que suivre des recettes."
+  },
+  {
+    "titre": "TCM Security",
+    "format": "YouTube",
+    "themes": [
+      "Hacking / CTF"
+    ],
+    "langue": "EN",
+    "lien": "https://www.youtube.com/@TCMSecurityAcademy",
+    "pourquoi": "Cours longs et gratuits de pentest et de hacking éthique."
+  },
+  {
+    "titre": "13Cubed",
+    "format": "YouTube",
+    "themes": [
+      "Défense"
+    ],
+    "langue": "EN",
+    "lien": "https://www.youtube.com/@13Cubed",
+    "pourquoi": "Forensic et réponse à incident Windows, très concret."
+  },
+  {
+    "titre": "Computerphile",
+    "format": "YouTube",
+    "themes": [
+      "Code"
+    ],
+    "langue": "EN",
+    "lien": "https://www.youtube.com/@Computerphile",
+    "pourquoi": "Des chercheurs expliquent un concept en 10 minutes."
+  },
+  {
+    "titre": "Ben Eater",
+    "format": "YouTube",
+    "themes": [
+      "Code"
+    ],
+    "langue": "EN",
+    "lien": "https://www.youtube.com/@BenEater",
+    "pourquoi": "Construire un ordinateur de zéro : l'esprit « de A à Z »."
+  },
+  {
+    "titre": "Fireship",
+    "format": "YouTube",
+    "themes": [
+      "Code"
+    ],
+    "langue": "EN",
+    "lien": "https://www.youtube.com/@Fireship",
+    "pourquoi": "Un concept de code en 100 secondes."
+  },
+  {
+    "titre": "SecNumacadémie (ANSSI)",
+    "format": "Cours",
+    "themes": [
+      "Défense"
+    ],
+    "langue": "FR",
+    "lien": "https://cyber.gouv.fr/le-mooc-secnumacademie",
+    "pourquoi": "Le MOOC gratuit de l'ANSSI, avec attestation."
+  },
+  {
+    "titre": "CS50x (Harvard)",
+    "format": "Cours",
+    "themes": [
+      "Code"
+    ],
+    "langue": "EN",
+    "lien": "https://cs50.harvard.edu/x/",
+    "pourquoi": "Le meilleur cours d'introduction à l'informatique : C, mémoire, SQL, web."
+  },
+  {
+    "titre": "Cisco Networking Academy",
+    "format": "Cours",
+    "themes": [
+      "Linux / Réseau"
+    ],
+    "langue": "FR",
+    "lien": "https://www.netacad.com",
+    "pourquoi": "Cours gratuits de réseau et d'introduction à la cyber, avec badges."
+  },
+  {
+    "titre": "OWASP Top 10:2025",
+    "format": "Cours",
+    "themes": [
+      "Web / SQL"
+    ],
+    "langue": "EN",
+    "lien": "https://owasp.org/Top10/2025/",
+    "pourquoi": "Les 10 risques majeurs des applications web, édition 2025."
+  },
+  {
+    "titre": "MDN — Le protocole HTTP",
+    "format": "Cours",
+    "themes": [
+      "Web / SQL"
+    ],
+    "langue": "FR",
+    "lien": "https://developer.mozilla.org/fr/docs/Web/HTTP",
+    "pourquoi": "La documentation de référence sur HTTP."
+  },
+  {
+    "titre": "Zero Days (2016)",
+    "format": "Documentaire",
+    "themes": [
+      "Culture cyber"
+    ],
+    "langue": "EN",
+    "lien": "",
+    "pourquoi": "L'histoire de Stuxnet, la première cyberarme connue."
+  },
+  {
+    "titre": "Citizenfour (2014)",
+    "format": "Documentaire",
+    "themes": [
+      "Culture cyber"
+    ],
+    "langue": "EN",
+    "lien": "",
+    "pourquoi": "Les révélations d'Edward Snowden, filmées en direct."
+  },
+  {
+    "titre": "À voix haute (2017)",
+    "format": "Documentaire",
+    "themes": [
+      "Oral"
+    ],
+    "langue": "FR",
+    "lien": "",
+    "pourquoi": "Des étudiants préparent le concours d'éloquence Eloquentia."
+  },
+  {
+    "titre": "Mr. Robot",
+    "format": "Série",
+    "themes": [
+      "Culture cyber"
+    ],
+    "langue": "EN",
+    "lien": "",
+    "pourquoi": "La fiction la plus réaliste sur le hacking."
+  },
+  {
+    "titre": "Darknet Diaries",
+    "format": "Podcast",
+    "themes": [
+      "Culture cyber"
+    ],
+    "langue": "EN",
+    "lien": "https://darknetdiaries.com",
+    "pourquoi": "Un épisode = une vraie histoire de hack."
+  },
+  {
+    "titre": "NoLimitSecu",
+    "format": "Podcast",
+    "themes": [
+      "Défense"
+    ],
+    "langue": "FR",
+    "lien": "https://www.nolimitsecu.fr",
+    "pourquoi": "Podcast hebdo de professionnels français de la sécurité."
+  },
+  {
+    "titre": "Le Comptoir Sécu",
+    "format": "Podcast",
+    "themes": [
+      "Culture cyber"
+    ],
+    "langue": "FR",
+    "lien": "",
+    "pourquoi": "Podcast français historique, surtout pour ses archives."
+  },
+  {
+    "titre": "Sécurité informatique — Ethical Hacking (ENI)",
+    "format": "Livre",
+    "themes": [
+      "Hacking / CTF"
+    ],
+    "langue": "FR",
+    "lien": "",
+    "pourquoi": "Le manuel français de référence pour apprendre l'attaque pour mieux défendre."
+  },
+  {
+    "titre": "Hacking: The Art of Exploitation",
+    "format": "Livre",
+    "themes": [
+      "Hacking / CTF"
+    ],
+    "langue": "EN",
+    "lien": "",
+    "pourquoi": "Le classique de Jon Erickson : C, mémoire, exploitation."
+  },
+  {
+    "titre": "Real-World Bug Hunting",
+    "format": "Livre",
+    "themes": [
+      "Web / SQL"
+    ],
+    "langue": "EN",
+    "lien": "",
+    "pourquoi": "Des failles web réelles de bug bounty expliquées une par une."
+  },
+  {
+    "titre": "TED Talks, le guide officiel de la prise de parole",
+    "format": "Livre",
+    "themes": [
+      "Oral"
+    ],
+    "langue": "FR",
+    "lien": "",
+    "pourquoi": "Construire une intervention claire, par le patron de TED."
+  }
+]

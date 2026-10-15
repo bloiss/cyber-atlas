@@ -1,0 +1,175 @@
+[
+  {
+    "nom": "TryHackMe",
+    "niveau": "Débutant",
+    "domaines": [
+      "Réseau",
+      "Web",
+      "Linux",
+      "Pentest",
+      "Blue team"
+    ],
+    "langue": "EN",
+    "cout": "Freemium",
+    "lien": "https://tryhackme.com",
+    "pourquoi": "La porte d'entrée idéale : machines dans le navigateur, parcours guidés (Pre Security puis Cyber Security 101). Commence ici."
+  },
+  {
+    "nom": "OverTheWire — Bandit",
+    "niveau": "Débutant",
+    "domaines": [
+      "Linux"
+    ],
+    "langue": "EN",
+    "cout": "Gratuit",
+    "lien": "https://overthewire.org/wargames/bandit/",
+    "pourquoi": "Apprendre le terminal Linux en jouant, niveau par niveau via SSH. Indispensable avant tout le reste."
+  },
+  {
+    "nom": "SQLBolt",
+    "niveau": "Débutant",
+    "domaines": [
+      "SQL"
+    ],
+    "langue": "EN",
+    "cout": "Gratuit",
+    "lien": "https://sqlbolt.com",
+    "pourquoi": "Comprendre le SQL avant de l'attaquer : 18 leçons interactives."
+  },
+  {
+    "nom": "PortSwigger Web Security Academy",
+    "niveau": "Tous niveaux",
+    "domaines": [
+      "Web",
+      "SQL"
+    ],
+    "langue": "EN",
+    "cout": "Gratuit",
+    "lien": "https://portswigger.net/web-security",
+    "pourquoi": "La référence mondiale en sécurité web, par les créateurs de Burp Suite. Cours et labs sur SQLi, XSS, CSRF, SSRF."
+  },
+  {
+    "nom": "picoCTF",
+    "niveau": "Débutant",
+    "domaines": [
+      "CTF",
+      "Crypto",
+      "Web",
+      "Forensic"
+    ],
+    "langue": "EN",
+    "cout": "Gratuit",
+    "lien": "https://picoctf.org",
+    "pourquoi": "CTF pédagogique de Carnegie Mellon, avec des archives d'exercices accessibles toute l'année."
+  },
+  {
+    "nom": "Root-Me",
+    "niveau": "Tous niveaux",
+    "domaines": [
+      "Web",
+      "Réseau",
+      "Crypto",
+      "Forensic",
+      "CTF"
+    ],
+    "langue": "FR",
+    "cout": "Gratuit",
+    "lien": "https://www.root-me.org",
+    "pourquoi": "La référence francophone : des centaines de challenges classés par catégorie. Un profil Root-Me se montre en entretien."
+  },
+  {
+    "nom": "CryptoHack",
+    "niveau": "Tous niveaux",
+    "domaines": [
+      "Crypto"
+    ],
+    "langue": "EN",
+    "cout": "Gratuit",
+    "lien": "https://cryptohack.org",
+    "pourquoi": "La cryptographie moderne (XOR, AES, RSA) par des défis progressifs en Python."
+  },
+  {
+    "nom": "Hackropole (ANSSI)",
+    "niveau": "Intermédiaire",
+    "domaines": [
+      "CTF",
+      "Web",
+      "Crypto",
+      "Forensic"
+    ],
+    "langue": "FR",
+    "cout": "Gratuit",
+    "lien": "https://hackropole.fr/fr/",
+    "pourquoi": "Les épreuves du France Cybersecurity Challenge, publiées par l'ANSSI. Le tremplin vers les CTF nationaux."
+  },
+  {
+    "nom": "Hack The Box",
+    "niveau": "Intermédiaire",
+    "domaines": [
+      "Pentest",
+      "Web",
+      "Linux"
+    ],
+    "langue": "EN",
+    "cout": "Freemium",
+    "lien": "https://www.hackthebox.com",
+    "pourquoi": "Machines réalistes à compromettre. Commence par « Starting Point » et l'Academy."
+  },
+  {
+    "nom": "pwn.college",
+    "niveau": "Tous niveaux",
+    "domaines": [
+      "Binaire",
+      "Linux"
+    ],
+    "langue": "EN",
+    "cout": "Gratuit",
+    "lien": "https://pwn.college",
+    "pourquoi": "Cours d'Arizona State University : du terminal jusqu'à l'exploitation mémoire, très structuré."
+  },
+  {
+    "nom": "CyberDefenders",
+    "niveau": "Intermédiaire",
+    "domaines": [
+      "Blue team",
+      "Forensic"
+    ],
+    "langue": "EN",
+    "cout": "Freemium",
+    "lien": "https://cyberdefenders.org",
+    "pourquoi": "Côté défense : analyse de logs, de captures réseau et de disques, comme en SOC."
+  },
+  {
+    "nom": "LetsDefend",
+    "niveau": "Intermédiaire",
+    "domaines": [
+      "Blue team"
+    ],
+    "langue": "EN",
+    "cout": "Freemium",
+    "lien": "https://letsdefend.io",
+    "pourquoi": "Simulateur d'analyste SOC : traiter de vraies alertes dans un SIEM."
+  },
+  {
+    "nom": "CTFtime",
+    "niveau": "Intermédiaire",
+    "domaines": [
+      "CTF"
+    ],
+    "langue": "EN",
+    "cout": "Gratuit",
+    "lien": "https://ctftime.org",
+    "pourquoi": "Le calendrier mondial des CTF et les write-ups des équipes."
+  },
+  {
+    "nom": "OWASP Juice Shop (en local)",
+    "niveau": "Tous niveaux",
+    "domaines": [
+      "Web"
+    ],
+    "langue": "EN",
+    "cout": "Gratuit",
+    "lien": "https://owasp.org/www-project-juice-shop/",
+    "pourquoi": "Une boutique volontairement vulnérable à installer chez toi. Idéal pour attaquer puis corriger."
+  }
+]

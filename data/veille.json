@@ -1,0 +1,90 @@
+[
+  {
+    "source": "CERT-FR (ANSSI)",
+    "type": "Officiel",
+    "langue": "FR",
+    "frequence": "Chaque jour",
+    "lien": "https://www.cert.ssi.gouv.fr",
+    "contenu": "Alertes et vulnérabilités officielles. La source la plus fiable."
+  },
+  {
+    "source": "cyber.gouv.fr",
+    "type": "Officiel",
+    "langue": "FR",
+    "frequence": "Hebdo",
+    "lien": "https://cyber.gouv.fr",
+    "contenu": "Guides et état de la menace par l'ANSSI."
+  },
+  {
+    "source": "Cybermalveillance.gouv.fr",
+    "type": "Officiel",
+    "langue": "FR",
+    "frequence": "Hebdo",
+    "lien": "https://www.cybermalveillance.gouv.fr",
+    "contenu": "Arnaques et menaces visant le grand public et les PME."
+  },
+  {
+    "source": "LeMagIT — Sécurité",
+    "type": "Média cyber",
+    "langue": "FR",
+    "frequence": "Chaque jour",
+    "lien": "https://www.lemagit.fr",
+    "contenu": "Actualité cyber pro, très solide sur les rançongiciels."
+  },
+  {
+    "source": "ZATAZ",
+    "type": "Média cyber",
+    "langue": "FR",
+    "frequence": "2–3 fois / sem.",
+    "lien": "https://www.zataz.com",
+    "contenu": "Fuites de données et cybercriminalité."
+  },
+  {
+    "source": "Korben",
+    "type": "Média tech",
+    "langue": "FR",
+    "frequence": "2–3 fois / sem.",
+    "lien": "https://korben.info",
+    "contenu": "Outils et culture geek."
+  },
+  {
+    "source": "BleepingComputer",
+    "type": "Média cyber",
+    "langue": "EN",
+    "frequence": "Chaque jour",
+    "lien": "https://www.bleepingcomputer.com",
+    "contenu": "Actualité cyber internationale très réactive."
+  },
+  {
+    "source": "The Hacker News",
+    "type": "Média cyber",
+    "langue": "EN",
+    "frequence": "Chaque jour",
+    "lien": "https://thehackernews.com",
+    "contenu": "Failles et campagnes d'attaques, résumées rapidement."
+  },
+  {
+    "source": "SANS Internet Storm Center",
+    "type": "Média cyber",
+    "langue": "EN",
+    "frequence": "2–3 fois / sem.",
+    "lien": "https://isc.sans.edu",
+    "contenu": "Analyses quotidiennes d'incidents, avec un podcast de 5 min."
+  },
+  {
+    "source": "Krebs on Security",
+    "type": "Enquête",
+    "langue": "EN",
+    "frequence": "Hebdo",
+    "lien": "https://krebsonsecurity.com",
+    "contenu": "Enquêtes longues sur la cybercriminalité."
+  },
+  {
+    "source": "CISA — Known Exploited Vulnerabilities",
+    "type": "Base de failles",
+    "langue": "EN",
+    "frequence": "Hebdo",
+    "lien": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+    "contenu": "Les failles réellement exploitées : savoir lesquelles comptent."
+  }
+]
