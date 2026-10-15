@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Métiers de la cyber",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["metier", "equipe", "quotidien", "competences", "salaire", "sortieEcole", "certifs"],
+    "additionalProperties": false,
+    "properties": {
+      "metier": { "type": "string" },
+      "equipe": { "type": "string", "enum": ["Défense", "Offensif", "Gouvernance", "Ingénierie"] },
+      "quotidien": { "type": "string" },
+      "competences": { "type": "string" },
+      "salaire": { "type": "string" },
+      "sortieEcole": { "type": "string" },
+      "certifs": { "type": "string" }
+    }
+  }
+}

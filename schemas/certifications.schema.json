@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Certifications",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["nom", "organisme", "niveau", "voie", "format", "cout", "quand", "lien"],
+    "additionalProperties": false,
+    "properties": {
+      "nom": { "type": "string" },
+      "organisme": { "type": "string" },
+      "niveau": { "type": "integer", "enum": [1, 2, 3, 4], "description": "1 Premier pas, 2 Junior, 3 Confirmé, 4 Expert" },
+      "voie": { "type": "string", "enum": ["Généraliste", "Défensif", "Offensif", "Gouvernance"] },
+      "format": { "type": "string", "enum": ["QCM", "Pratique", "Mixte"] },
+      "cout": { "type": "string", "enum": ["Gratuit", "€", "€€", "€€€"] },
+      "quand": { "type": "string" },
+      "lien": { "type": "string", "format": "uri", "pattern": "^https://" }
+    }
+  }
+}

@@ -4,13 +4,17 @@
   "editor.tabSize": 2,
   "files.encoding": "utf8",
   "files.eol": "\n",
-  "liveServer.settings.port": 5500,
-  "liveServer.settings.root": "/",
   "cSpell.language": "fr,en",
   "json.schemas": [
-    { "fileMatch": ["data/toolbox.json"], "url": "./schemas/toolbox.schema.json" },
-    { "fileMatch": ["data/lexique.json"], "url": "./schemas/lexique.schema.json" },
-    { "fileMatch": ["data/plateformes.json"], "url": "./schemas/plateformes.schema.json" },
-    { "fileMatch": ["data/projets.json"], "url": "./schemas/projets.schema.json" }
+    { "fileMatch": ["src/data/toolbox.json"], "url": "./schemas/toolbox.schema.json" },
+    { "fileMatch": ["src/data/lexique.json"], "url": "./schemas/lexique.schema.json" },
+    { "fileMatch": ["src/data/plateformes.json"], "url": "./schemas/plateformes.schema.json" },
+    { "fileMatch": ["src/data/projets.json"], "url": "./schemas/projets.schema.json" },
+    { "fileMatch": ["src/data/veille.json"], "url": "./schemas/veille.schema.json" },
+    { "fileMatch": ["src/data/parcours.json"], "url": "./schemas/parcours.schema.json" },
+    { "fileMatch": ["src/data/metiers.json"], "url": "./schemas/metiers.schema.json" },
+    { "fileMatch": ["src/data/certifications.json"], "url": "./schemas/certifications.schema.json" },
+    { "fileMatch": ["src/data/bibliotheque.json"], "url": "./schemas/bibliotheque.schema.json" },
+    { "fileMatch": ["src/data/anki.json"], "url": "./schemas/anki.schema.json" }
   ]
 }

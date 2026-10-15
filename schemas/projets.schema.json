@@ -16,7 +16,7 @@
       "lien": {
         "type": "string",
         "description": "Vers le write-up ou le dépôt GitHub. Laisse vide si pas encore publié.",
-        "anyOf": [{ "const": "" }, { "format": "uri", "pattern": "^https://" }]
+        "anyOf": [{ "const": "" }, { "type": "string", "format": "uri", "pattern": "^https://" }]
       }
     }
   }

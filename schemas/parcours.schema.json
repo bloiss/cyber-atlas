@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Parcours 6 mois",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["periode", "titre", "etapes"],
+    "additionalProperties": false,
+    "properties": {
+      "periode": { "type": "string" },
+      "titre": { "type": "string" },
+      "etapes": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "required": ["id", "titre", "livrable", "lien"],
+          "additionalProperties": false,
+          "properties": {
+            "id": { "type": "string", "description": "Identifiant unique, utilisé pour mémoriser la case cochée" },
+            "titre": { "type": "string" },
+            "livrable": { "type": "string" },
+            "lien": {
+              "type": "string",
+              "description": "Laisse vide si l'étape n'a pas de ressource dédiée",
+              "anyOf": [{ "const": "" }, { "type": "string", "format": "uri", "pattern": "^https://" }]
+            }
+          }
+        }
+      }
+    }
+  }
+}

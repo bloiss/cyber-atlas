@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Sources de veille",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["source", "type", "langue", "frequence", "lien", "contenu"],
+    "additionalProperties": false,
+    "properties": {
+      "source": { "type": "string" },
+      "type": { "type": "string", "enum": ["Officiel", "Média cyber", "Média tech", "Enquête", "Base de failles"] },
+      "langue": { "type": "string", "enum": ["FR", "EN"] },
+      "frequence": { "type": "string", "enum": ["Chaque jour", "Hebdo", "2–3 fois / sem."] },
+      "lien": { "type": "string", "format": "uri", "pattern": "^https://" },
+      "contenu": { "type": "string" }
+    }
+  }
+}
