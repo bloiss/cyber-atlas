@@ -18,10 +18,10 @@ export function AnkiPage() {
         </p>
       </div>
       <div className="cta" style={{ margin: '0 0 20px' }}>
-        <a className="btn primary" href="/assets/cyber-atlas-cartes.csv" download>
+        <a className="btn primary" href={`${import.meta.env.BASE_URL}assets/cyber-atlas-cartes.csv`} download>
           Télécharger les cartes (CSV)
         </a>
-        <a className="btn" href="/assets/Cyber_Atlas.apkg" download>
+        <a className="btn" href={`${import.meta.env.BASE_URL}assets/Cyber_Atlas.apkg`} download>
           Paquet Anki (.apkg)
         </a>
         <a className="btn" href="https://apps.ankiweb.net" target="_blank" rel="noopener">

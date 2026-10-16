@@ -140,8 +140,12 @@ Tout est dans le bloc `:root` en haut de `src/styles/global.css` (thème clair),
 
 ## 4. Mettre le site en ligne
 
-Prévu en Phase 6 de la migration 3D (voir `CLAUDE.md`) : GitHub Pages + GitHub Actions, avec un build automatique à
-chaque push. Pas encore configuré — on le fera une fois les phases 3D validées.
+Le site se déploie automatiquement sur GitHub Pages à chaque push sur `master`, via `.github/workflows/deploy.yml`
+(build Vite, puis publication). URL : `https://<ton-pseudo>.github.io/cyber-atlas/`.
+
+En local, `vite.config.ts` fixe `base: '/cyber-atlas/'` pour que les chemins fonctionnent sous ce sous-dossier — si
+tu renommes un jour le dépôt, mets à jour cette valeur. Si le déploiement ne se déclenche pas après un push,
+vérifie sur GitHub : **Settings → Pages → Source** doit être réglé sur **GitHub Actions**.
 
 ## 5. Idées pour la suite
 

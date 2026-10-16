@@ -69,7 +69,11 @@ en moins de 10 secondes, au clavier et au lecteur d'écran, même sans WebGL.
 - **Phase 4** : Parcours et Toolbox en 3D.
 - **Phase 5** : perf (Lighthouse ≥ 90 desktop — à mesurer dans un vrai Chrome, pas d'outil headless disponible ici),
   accessibilité, repli 2D si WebGL absent.
-- **Phase 6** : déploiement GitHub Pages + GitHub Actions.
+- **Phase 6 — faite, en avance** : déploiement GitHub Pages + GitHub Actions (`.github/workflows/deploy.yml`),
+  fait avant les phases 3D/4/5 à la demande de Loïs pour avoir une URL publique stable. `vite.config.ts` fixe
+  `base: '/cyber-atlas/'` ; les deux liens de téléchargement Anki (`AnkiPage.tsx`) et le favicon (`index.html`,
+  via `%BASE_URL%`) tiennent compte de ce sous-dossier — à refaire pareil pour toute nouvelle référence à
+  `public/assets/`.
 
 Charte et Toolbox : l'habillage 3D ne doit jamais diluer leur message (avertissement légal, usage réservé aux labs
 et plateformes autorisées) — Charte reste volontairement sans 3D.
