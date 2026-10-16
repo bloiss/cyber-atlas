@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bloiss.github.io/cyber-atlas/sitemap.xml
