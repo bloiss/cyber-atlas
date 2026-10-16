@@ -18,9 +18,9 @@ Ce fichier est lu par Claude Code au début de chaque conversation. Il résume l
   sans build — mais la règle d'or reste : **tout le contenu est dans `src/data/*.json`**, on ajoute une ressource en
   modifiant le JSON, jamais le code.
 - `src/data/*.json` (plateformes, toolbox, bibliotheque, veille, parcours, metiers, certifications, lexique, anki,
-  projets), importés statiquement par `src/data/index.ts` et typés via `src/types/*.ts`, **générés** depuis
-  `schemas/*.schema.json` par `npm run gen:types` (ne pas éditer `src/types/` à la main). Après avoir ajouté un
-  champ ou une valeur d'enum dans un schéma, relancer `npm run gen:types`.
+  projets, agenda, cours-linux, cours-python, cours-sql, cours-reseau), importés statiquement par `src/data/index.ts`
+  et typés via `src/types/*.ts`, **générés** depuis `schemas/*.schema.json` par `npm run gen:types` (ne pas éditer
+  `src/types/` à la main). Après avoir ajouté un champ ou une valeur d'enum dans un schéma, relancer `npm run gen:types`.
 - Navigation par ancre, portée en React (`src/hooks/useHashRoute.ts`) : un composant par page sous `src/pages/`,
   affiché/masqué selon `location.hash`, exactement comme avant (`#toolbox`, `#veille`…). Les liens de nav sont dans
   `src/components/Nav.tsx`.
@@ -58,10 +58,12 @@ Lenis), sans jamais sacrifier le contenu ni l'accessibilité — un visiteur doi
 en moins de 10 secondes, au clavier et au lecteur d'écran, même sans WebGL.
 
 - **Phase 1 — faite** : migration Vite + React + TS à l'identique, sans 3D (voir Stack ci-dessus).
-- **Phase 2** : scène 3D d'accueil. Concept retenu : **constellation réseau** (pas de globe) — un graphe de nœuds
-  reliés par des arêtes lumineuses bleu/vert, chaque nœud = une section du site. Même moteur de graphe réutilisé en
-  Phase 4 pour Toolbox (amas par catégorie) et Parcours (chaîne de 6 étapes qui s'allume). Piste à creuser pour la
-  page Méthode : une variante « cerveau/arbre de neurones » du même moteur, chaque principe d'apprentissage (rappel
+- **Phase 2 — faite** : scène 3D d'accueil (`src/scene/`). Concept retenu : **constellation réseau** (pas de
+  globe) — un graphe de 18 nœuds (une section par page de nav) reliés par des arêtes lumineuses bleu/vert, répartis
+  en 4 amas (mêmes groupes que la nav). Lazy/Suspense (chunk séparé), repli 2D silencieux si WebGL absent
+  (`useWebglSupported`), rotation coupée si `prefers-reduced-motion`. Même moteur de graphe à réutiliser en Phase 4
+  pour Toolbox (amas par catégorie) et Parcours (chaîne de 6 étapes qui s'allume). Piste à creuser pour la page
+  Méthode : une variante « cerveau/arbre de neurones » du même moteur, chaque principe d'apprentissage (rappel
   actif, répétition espacée, sommeil…) comme une branche lumineuse — cohérent avec le langage visuel déjà choisi.
 - **Phase 3** : navigation caméra liée au scroll (GSAP ScrollTrigger + Lenis), coupée si `prefers-reduced-motion`.
 - **Phase 4** : Parcours et Toolbox en 3D.
@@ -72,9 +74,42 @@ en moins de 10 secondes, au clavier et au lecteur d'écran, même sans WebGL.
 Charte et Toolbox : l'habillage 3D ne doit jamais diluer leur message (avertissement légal, usage réservé aux labs
 et plateformes autorisées) — Charte reste volontairement sans 3D.
 
+## Fonctionnalités « cahier » (ajoutées hors des phases 3D, à la demande de Loïs)
+
+- **Carnet de révision** (`#carnet`, `src/pages/CarnetPage.tsx` + `src/components/book/`) : les cartes de
+  `D.anki` mises en scène en carnet **à deux pages** (gauche = question, droite = réponse révélable), avec un vrai
+  effet de page qui se tourne en CSS 3D (`PageFlip.tsx` — pas de librairie externe, voir justification dans le
+  composant). **Règle fixée par Loïs : tout composant « cahier » est à deux pages (reliure centrale), jamais une
+  seule page** — vérifier cette mémoire avant de modifier ou dupliquer ce pattern.
+- **Agenda cyber** (`#agenda`, `src/pages/AgendaPage.tsx`, données dans `src/data/agenda.json`) : grandes
+  conférences et CTF **mondiaux** (DEF CON, Black Hat, CCC, RSA, FIC, GreHack, Insomni'hack, picoCTF…), distinct du
+  tableau d'événements rennais de la page Écosystème Rennes (pas de doublon). Dates vérifiées par recherche web au
+  moment de la création (16 octobre 2026) — **toujours revérifier avant d'ajouter un événement**, et utiliser
+  `periodeLibre` plutôt qu'une date inventée quand l'édition suivante n'est pas encore annoncée.
+- **Bloc-notes** (`#bloc-notes`, `src/pages/BlocNotesPage.tsx`) : feuille libre où le visiteur écrit ses propres
+  notes, sauvegardées dans `localStorage` (clé `atlas:notes`, via `useLocalStorage`). Une seule page (pas de
+  reliure à deux pages ici, contrairement au Carnet) puisque c'est une feuille qu'on remplit, pas un livre.
+
+## Section « Cours » (contenu pédagogique produit pour le site, pas du tri de liens)
+
+Différence de nature avec Bibliothèque/Plateformes/Cheatsheets : ces pages-là trient des ressources externes, la
+section Cours **écrit le contenu elle-même** — objectifs, explication, mémo, exercices guidés (indice puis
+solution), fiche PDF téléchargeable par chapitre (`window.print()` + CSS d'impression dans
+`CoursMatierePage.module.css`, pas de librairie PDF).
+
+- `#cours` (`src/pages/CoursPage.tsx`) : dashboard, une carte par matière avec la progression lue.
+- `#cours-linux`, `#cours-python`, `#cours-sql`, `#cours-reseau` (`src/pages/CoursMatierePage.tsx`, composant
+  générique paramétré par `matiere`) : navigation interne entre chapitres en état React (même précédent que les
+  onglets de `CheatsheetsPage.tsx`), pas dans le routeur par ancre.
+- Données : `src/data/cours-{matiere}.json`, un seul schéma partagé `schemas/cours.schema.json`. Chaque chapitre a
+  `objectifs[]`, `contenuMarkdown` (rendu avec `react-markdown`, seule dépendance ajoutée pour cette section),
+  `memo[]`, `exercices[]`. **4 chapitres par matière pour l'instant** (16 au total, premier lot) — ajouter un
+  chapitre = ajouter un bloc dans le bon `cours-*.json`, avec un `ordre` qui le place dans la séquence.
+  `src/data/matieres.ts` liste les 4 matières (id, nom, description) sans dupliquer l'info ailleurs.
+- Progression « lu » par chapitre dans `localStorage` (clé `atlas:cours-lu-<matiere>`, via `useLocalStorage`).
+
 ## Idées en attente
 
-- Page **Agenda** des CTF et événements rennais, depuis `src/data/agenda.json`.
 - Mode **quiz** qui tire 10 cartes de `anki.json`.
 - Compteur de jours consécutifs dans la checklist du jour.
 - Vrai formulaire de contribution (Formspree, Netlify Forms ou Tally).

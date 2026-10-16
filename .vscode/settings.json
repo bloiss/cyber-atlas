@@ -15,6 +15,16 @@
     { "fileMatch": ["src/data/metiers.json"], "url": "./schemas/metiers.schema.json" },
     { "fileMatch": ["src/data/certifications.json"], "url": "./schemas/certifications.schema.json" },
     { "fileMatch": ["src/data/bibliotheque.json"], "url": "./schemas/bibliotheque.schema.json" },
-    { "fileMatch": ["src/data/anki.json"], "url": "./schemas/anki.schema.json" }
+    { "fileMatch": ["src/data/anki.json"], "url": "./schemas/anki.schema.json" },
+    { "fileMatch": ["src/data/agenda.json"], "url": "./schemas/agenda.schema.json" },
+    {
+      "fileMatch": [
+        "src/data/cours-linux.json",
+        "src/data/cours-python.json",
+        "src/data/cours-sql.json",
+        "src/data/cours-reseau.json"
+      ],
+      "url": "./schemas/cours.schema.json"
+    }
   ]
 }

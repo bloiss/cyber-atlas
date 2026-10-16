@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Chapitres de cours",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "titre", "ordre", "duree", "objectifs", "contenuMarkdown", "memo", "exercices"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "type": "string", "description": "Identifiant unique du chapitre dans la matière (slug)" },
+      "titre": { "type": "string" },
+      "ordre": { "type": "integer", "minimum": 1 },
+      "duree": { "type": "string", "description": "Ex. « 20 min »" },
+      "objectifs": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+      "contenuMarkdown": {
+        "type": "string",
+        "description": "Corps du cours en Markdown (##, listes, ```blocs de code```)"
+      },
+      "memo": {
+        "type": "array",
+        "items": { "type": "string" },
+        "minItems": 1,
+        "description": "Points essentiels à retenir"
+      },
+      "exercices": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["enonce", "solution"],
+          "additionalProperties": false,
+          "properties": {
+            "enonce": { "type": "string" },
+            "indice": { "type": "string" },
+            "solution": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -17,7 +17,7 @@ export type Parcours = {
       /**
        * Laisse vide si l'étape n'a pas de ressource dédiée
        */
-      lien: ('' | string) & string;
+      lien: ("" | string) & string;
     },
     ...{
       /**
@@ -29,7 +29,7 @@ export type Parcours = {
       /**
        * Laisse vide si l'étape n'a pas de ressource dédiée
        */
-      lien: ('' | string) & string;
-    }[],
+      lien: ("" | string) & string;
+    }[]
   ];
 }[];

@@ -1,0 +1,126 @@
+[
+  {
+    "id": "modele-tcp-ip",
+    "titre": "Le modèle TCP/IP en pratique",
+    "ordre": 1,
+    "duree": "25 min",
+    "objectifs": [
+      "Expliquer l'encapsulation avec tes mots",
+      "Distinguer une adresse IP d'un port",
+      "Reconnaître une adresse IP privée"
+    ],
+    "contenuMarkdown": "## Pourquoi un modèle en couches\n\nEnvoyer un message sur un réseau mélange plusieurs problèmes différents : comment transporter des bits sur un câble, comment adresser une machine, comment garantir que les données arrivent complètes. Le modèle TCP/IP découpe ça en 4 couches, chacune ne s'occupant que de son problème, indifférente à ce que font les autres.\n\n```\nApplication   HTTP, DNS, SSH…              « que dit-on ? »\nTransport     TCP, UDP                     « fiable ou rapide ? »\nInternet      IP                           « vers quelle machine ? »\nAccès réseau  Ethernet, Wi-Fi              « comment, physiquement ? »\n```\n\n## Encapsulation\n\nQuand tu charges une page web, chaque couche ajoute son propre en-tête autour de ce que la couche du dessus lui donne, un peu comme des enveloppes imbriquées :\n\n```\n[Ethernet [IP [TCP [HTTP: GET /index.html]]]]\n```\n\nÀ l'arrivée, chaque couche de la machine destinataire retire sa propre enveloppe et transmet le contenu à la couche du dessus. C'est pour ça qu'un outil comme Wireshark (vu au dernier chapitre) peut te montrer, pour un seul paquet, les détails Ethernet, IP, TCP et HTTP empilés les uns dans les autres.\n\n## Adresse IP et port\n\nL'adresse IP identifie une **machine** sur le réseau (ex. `192.168.1.10`). Le port identifie un **service précis** sur cette machine (ex. `443` pour HTTPS). Une IP sans port, c'est une adresse sans numéro d'appartement.\n\n```\n192.168.1.10:443   → le service HTTPS de la machine 192.168.1.10\n```\n\nLes adresses privées (réservées aux réseaux locaux, jamais routées sur Internet) commencent par `10.x.x.x`, `172.16.x.x` à `172.31.x.x`, ou `192.168.x.x`. Si tu vois une de ces plages, tu es sur un réseau local, pas sur Internet public.",
+    "memo": [
+      "4 couches : Application (HTTP, DNS…), Transport (TCP/UDP), Internet (IP), Accès réseau (Ethernet, Wi-Fi)",
+      "Encapsulation : chaque couche ajoute son en-tête, comme des enveloppes imbriquées",
+      "Adresse IP = la machine, port = le service précis sur cette machine",
+      "Plages privées : 10.x.x.x, 172.16-31.x.x, 192.168.x.x — jamais routées sur Internet public",
+      "Wireshark montre les couches empilées pour un seul paquet capturé"
+    ],
+    "exercices": [
+      {
+        "enonce": "`10.0.5.23` est-elle une adresse publique ou privée ? Justifie.",
+        "indice": "Compare au début des trois plages privées.",
+        "solution": "Privée : elle commence par `10.`, qui est l'une des trois plages réservées aux réseaux locaux."
+      },
+      {
+        "enonce": "Que représente `192.168.1.5:22` ?",
+        "indice": "Sépare l'adresse IP du numéro après les deux-points, et rappelle-toi à quoi sert le port 22.",
+        "solution": "Le service SSH (port 22) de la machine `192.168.1.5`."
+      }
+    ]
+  },
+  {
+    "id": "tcp-udp-dns",
+    "titre": "TCP vs UDP, handshake, DNS",
+    "ordre": 2,
+    "duree": "25 min",
+    "objectifs": [
+      "Expliquer la différence entre TCP et UDP",
+      "Décrire les 3 étapes du handshake TCP",
+      "Expliquer à quoi sert le DNS"
+    ],
+    "contenuMarkdown": "## TCP : fiable, mais plus lent\n\nTCP garantit que les données arrivent complètes et dans l'ordre : s'il manque un morceau, il le redemande. C'est ce qu'utilisent HTTP, SSH, les emails — tout ce où perdre un bit d'information serait un problème.\n\n## UDP : rapide, sans garantie\n\nUDP envoie les données sans vérifier qu'elles arrivent, ni dans quel ordre. En échange, c'est plus rapide et plus léger. Utilisé pour la vidéo en direct, les jeux en ligne, le DNS : perdre un paquet de temps en temps est moins grave qu'attendre qu'il soit renvoyé.\n\n## Le handshake TCP (connexion en 3 temps)\n\nAvant d'échanger des données, TCP établit la connexion avec 3 messages :\n\n```\nClient  →  SYN        →  Serveur     « je veux me connecter »\nClient  ←  SYN-ACK     ←  Serveur     « d'accord, et toi ? »\nClient  →  ACK         →  Serveur     « c'est confirmé, on y va »\n```\n\nC'est après ce triple échange que les données applicatives (par exemple une requête HTTP) commencent à circuler. Un scan de ports (comme `nmap -sS`) exploite souvent ce mécanisme : envoyer un SYN et regarder la réponse suffit à savoir si un port est ouvert, sans terminer la connexion.\n\n## DNS : l'annuaire d'Internet\n\nLe DNS traduit un nom de domaine (`exemple.fr`) en adresse IP (`93.184.216.34`), parce que les humains retiennent mieux des noms que des chiffres.\n\n```\nToi  →  « quelle est l'IP de exemple.fr ? »  →  Serveur DNS\nToi  ←  « 93.184.216.34 »                     ←  Serveur DNS\nToi  →  connexion directe à 93.184.216.34\n```\n\nLe DNS utilise UDP par défaut (réponses courtes, rapidité prioritaire), et bascule en TCP seulement pour les réponses trop volumineuses pour tenir dans un seul paquet UDP.",
+    "memo": [
+      "TCP : fiable, vérifie et renvoie ce qui manque — HTTP, SSH, email",
+      "UDP : rapide, sans garantie de livraison — streaming, jeux, DNS",
+      "Handshake TCP en 3 temps : SYN → SYN-ACK → ACK, avant tout échange de données",
+      "DNS traduit un nom de domaine en adresse IP",
+      "DNS utilise UDP par défaut, TCP seulement si la réponse est trop grosse"
+    ],
+    "exercices": [
+      {
+        "enonce": "Un jeu vidéo en ligne privilégie la rapidité à la fiabilité parfaite. TCP ou UDP ? Pourquoi ?",
+        "indice": "Compare ce qui compte le plus : zéro perte, ou réactivité en temps réel.",
+        "solution": "UDP : perdre occasionnellement un paquet de position est moins grave qu'attendre qu'il soit renvoyé, ce qui créerait un décalage perceptible."
+      },
+      {
+        "enonce": "Remets dans l'ordre les 3 messages du handshake TCP : ACK, SYN, SYN-ACK.",
+        "indice": "Le client ouvre toujours l'échange.",
+        "solution": "SYN (client → serveur), puis SYN-ACK (serveur → client), puis ACK (client → serveur)."
+      }
+    ]
+  },
+  {
+    "id": "http-detail",
+    "titre": "HTTP en détail",
+    "ordre": 3,
+    "duree": "25 min",
+    "objectifs": [
+      "Associer chaque méthode HTTP à son usage",
+      "Lire les principaux codes de réponse",
+      "Comprendre le rôle des en-têtes et des cookies"
+    ],
+    "contenuMarkdown": "## Méthodes HTTP\n\n```\nGET      lire une ressource, sans effet de bord\nPOST     créer une ressource\nPUT      remplacer entièrement une ressource\nPATCH    modifier partiellement une ressource\nDELETE   supprimer une ressource\n```\n\n`GET` ne devrait jamais modifier des données côté serveur — c'est une convention que les API bien conçues respectent, pour qu'on puisse recharger une page ou la mettre en cache sans risque.\n\n## Codes de réponse\n\n```\n2xx   Succès          200 OK, 201 Created\n3xx   Redirection      301 déplacé définitivement, 302 temporairement\n4xx   Erreur côté client   400 requête invalide, 401 non authentifié, 403 interdit, 404 introuvable\n5xx   Erreur côté serveur  500 erreur interne\n```\n\nLa première chiffre dit la catégorie : si tu vois un code que tu ne connais pas, son premier chiffre te donne déjà une idée (un `418` est une erreur client, même si tu n'as jamais vu ce code précis).\n\n## Une requête complète\n\n```\nGET /profil HTTP/1.1\nHost: exemple.fr\nUser-Agent: Mozilla/5.0\nCookie: session=abc123\n```\n\nLes **en-têtes** (headers) transportent des métadonnées : qui fait la requête (`User-Agent`), quel site (`Host`), quelle session (`Cookie`). Le serveur répond avec ses propres en-têtes :\n\n```\nHTTP/1.1 200 OK\nContent-Type: text/html\nSet-Cookie: session=abc123; HttpOnly; Secure\n```\n\n## Cookies\n\nHTTP est « sans état » par nature : chaque requête est indépendante, le serveur ne se souvient de rien entre deux. Les cookies compensent ça : le serveur envoie `Set-Cookie` une fois, le navigateur le renvoie automatiquement à chaque requête suivante vers ce site, ce qui permet de garder une session ouverte (rester connecté). `HttpOnly` empêche le cookie d'être lu par du JavaScript (protection contre certaines attaques XSS), `Secure` l'envoie uniquement en HTTPS.",
+    "memo": [
+      "GET lit, POST crée, PUT remplace, PATCH modifie en partie, DELETE supprime",
+      "2xx succès, 3xx redirection, 4xx erreur client, 5xx erreur serveur",
+      "Les en-têtes transportent des métadonnées (Host, User-Agent, Cookie…)",
+      "HTTP est sans état ; les cookies simulent une session entre deux requêtes",
+      "`HttpOnly` protège un cookie du JavaScript, `Secure` l'impose en HTTPS uniquement"
+    ],
+    "exercices": [
+      {
+        "enonce": "Un visiteur reçoit un code 404. Que s'est-il passé, et de quel côté (client ou serveur) ?",
+        "indice": "Regarde la catégorie 4xx dans le mémo.",
+        "solution": "La ressource demandée n'existe pas sur le serveur : c'est une erreur côté client (4xx), le serveur fonctionne normalement mais ne trouve pas ce qui est demandé."
+      },
+      {
+        "enonce": "Quelle méthode HTTP utiliser pour mettre à jour uniquement l'adresse e-mail d'un utilisateur, sans toucher au reste de son profil ?",
+        "indice": "Compare PUT (remplace tout) et une autre méthode plus ciblée.",
+        "solution": "PATCH : elle modifie partiellement une ressource, contrairement à PUT qui la remplacerait entièrement."
+      }
+    ]
+  },
+  {
+    "id": "wireshark-guide",
+    "titre": "Lire une capture Wireshark, pas à pas",
+    "ordre": 4,
+    "duree": "30 min",
+    "objectifs": [
+      "Lancer une capture et appliquer un filtre simple",
+      "Identifier les couches d'un paquet dans l'inspecteur",
+      "Suivre un flux TCP complet"
+    ],
+    "contenuMarkdown": "## Avant de commencer\n\nWireshark capture tout le trafic qui passe par ton interface réseau — ne capture que sur tes propres machines ou un lab autorisé (voir la Charte). Installe-le depuis [wireshark.org](https://www.wireshark.org), uniquement sur une VM de lab pour t'entraîner.\n\n## Lancer une capture\n\n1. Ouvre Wireshark, choisis ton interface réseau (souvent `eth0`, `Wi-Fi`, ou une interface de VM).\n2. Clique sur le bouton de capture (requin bleu).\n3. Génère du trafic à observer : ouvre un site en HTTP (pas HTTPS, pour voir le contenu en clair) dans un lab, ou lance un `ping`.\n4. Arrête la capture avec le carré rouge.\n\n## Filtrer ce qui t'intéresse\n\nLa barre de filtre en haut accepte des expressions précises :\n\n```\nhttp                     # uniquement les paquets HTTP\nip.addr == 192.168.1.10   # tout le trafic depuis/vers cette IP\ntcp.port == 443           # uniquement le port 443\ndns                       # uniquement les requêtes/réponses DNS\n```\n\n## Lire un paquet\n\nClique sur une ligne : le panneau du bas montre les couches empilées, exactement comme l'encapsulation vue plus tôt :\n\n```\n▸ Frame               (métadonnées de capture)\n▸ Ethernet II          (adresses MAC)\n▸ Internet Protocol     (adresses IP source/destination)\n▸ Transmission Control Protocol   (ports, numéro de séquence, flags SYN/ACK…)\n▸ Hypertext Transfer Protocol      (méthode, en-têtes, si c'est du HTTP)\n```\n\nDéplie chaque ligne pour voir le détail. Les flags TCP (`SYN`, `ACK`, `FIN`) te permettent de repérer un handshake (vu au chapitre précédent) directement dans la capture.\n\n## Suivre un flux complet\n\nClic droit sur un paquet TCP → **Suivre** → **Flux TCP** : Wireshark reconstruit toute la conversation entre le client et le serveur dans une seule fenêtre lisible, pratique pour voir une requête HTTP et sa réponse à la suite, sans chercher paquet par paquet.",
+    "memo": [
+      "Ne capturer que sur tes machines ou un lab autorisé",
+      "Filtre de capture utile : `http`, `dns`, `ip.addr == x.x.x.x`, `tcp.port == x`",
+      "Un paquet se lit en couches empilées : Ethernet → IP → TCP → application",
+      "Les flags SYN/ACK/FIN dans la couche TCP permettent de repérer un handshake",
+      "Clic droit → Suivre → Flux TCP reconstruit une conversation complète et lisible"
+    ],
+    "exercices": [
+      {
+        "enonce": "Tu veux voir uniquement le trafic DNS échangé avec `8.8.8.8`. Écris le filtre Wireshark.",
+        "indice": "Combine deux filtres avec `&&` (et logique).",
+        "solution": "`dns && ip.addr == 8.8.8.8`"
+      },
+      {
+        "enonce": "Dans une capture, tu repères un paquet avec le flag SYN seul (pas ACK). Que représente-t-il dans le handshake ?",
+        "indice": "Relis l'ordre des 3 messages du chapitre précédent.",
+        "solution": "C'est le tout premier message du handshake TCP : le client qui initie la connexion (« je veux me connecter »)."
+      }
+    ]
+  }
+]

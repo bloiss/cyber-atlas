@@ -1,0 +1,125 @@
+[
+  {
+    "nom": "GreHack",
+    "type": "Conférence",
+    "lieu": "Grenoble, France",
+    "debut": "2026-11-13",
+    "fin": "2026-11-14",
+    "lien": "https://grehack.fr/",
+    "description": "Conférence technique française avec CTF, accessible pour une première conférence de recherche en sécurité."
+  },
+  {
+    "nom": "Black Hat Europe",
+    "type": "Conférence",
+    "lieu": "Londres, Royaume-Uni",
+    "debut": "2026-12-07",
+    "fin": "2026-12-10",
+    "lien": "https://www.blackhat.com/upcoming.html",
+    "description": "La déclinaison européenne de la plus grande conférence pro de la cybersécurité offensive."
+  },
+  {
+    "nom": "Chaos Communication Congress (40C3)",
+    "type": "Conférence",
+    "lieu": "Hambourg, Allemagne",
+    "debut": "2026-12-27",
+    "fin": "2026-12-30",
+    "lien": "https://events.ccc.de/",
+    "description": "Le grand rassemblement annuel du Chaos Computer Club : hacking, vie privée, société, dans un esprit militant."
+  },
+  {
+    "nom": "Passe Ton Hack d'Abord",
+    "type": "CTF",
+    "lieu": "En ligne",
+    "debut": "2027-01-18",
+    "fin": "2027-02-05",
+    "lien": "https://www.defense.gouv.fr/comcyber/evenements/passe-ton-hack-dabord-2027",
+    "description": "CTF du ministère des Armées pour lycéens et étudiants : gratuit, en ligne, une bonne première compétition."
+  },
+  {
+    "nom": "Insomni'hack",
+    "type": "Conférence",
+    "lieu": "Lausanne, Suisse",
+    "debut": "2027-02-01",
+    "fin": "2027-02-05",
+    "lien": "https://www.insomnihack.ch/",
+    "description": "Conférence suisse de référence avec un CTF réputé parmi les plus techniques d'Europe."
+  },
+  {
+    "nom": "Black Hat Asia",
+    "type": "Conférence",
+    "lieu": "Singapour",
+    "debut": "2027-02-28",
+    "fin": "2027-03-03",
+    "lien": "https://www.blackhat.com/asia/",
+    "description": "L'édition asiatique de Black Hat, pour suivre la recherche en sécurité côté Asie-Pacifique."
+  },
+  {
+    "nom": "Forum InCyber Europe (ex-FIC)",
+    "type": "Salon",
+    "lieu": "Lille, France",
+    "debut": "2027-03-09",
+    "fin": "2027-03-11",
+    "lien": "https://www.forum-fic.com/en/home/",
+    "description": "Le grand salon cyber européen à taille humaine : entreprises, écoles, institutions, idéal pour un stage."
+  },
+  {
+    "nom": "picoCTF",
+    "type": "CTF",
+    "lieu": "En ligne",
+    "periodeLibre": "Chaque printemps (généralement mars), dates 2027 à annoncer",
+    "lien": "https://picoctf.org/",
+    "description": "CTF pédagogique de Carnegie Mellon, parfait pour débuter : challenges progressifs, très bien documentés."
+  },
+  {
+    "nom": "RSA Conference",
+    "type": "Conférence",
+    "lieu": "San Francisco, États-Unis",
+    "debut": "2027-04-05",
+    "fin": "2027-04-08",
+    "lien": "https://www.rsaconference.com/usa",
+    "description": "L'un des plus grands rendez-vous mondiaux de la cybersécurité business, environ 44 000 participants."
+  },
+  {
+    "nom": "leHACK (ex-Nuit du Hack)",
+    "type": "CTF",
+    "lieu": "Paris, France",
+    "periodeLibre": "Généralement fin juin, Cité des sciences et de l'industrie",
+    "lien": "https://lehack.org/",
+    "description": "Le plus ancien CTF francophone encore actif, en présentiel, ambiance communautaire marquée."
+  },
+  {
+    "nom": "Infosecurity Europe",
+    "type": "Salon",
+    "lieu": "Londres, Royaume-Uni",
+    "debut": "2027-06-08",
+    "fin": "2027-06-10",
+    "lien": "https://www.infosecurityeurope.com/",
+    "description": "Le plus grand salon cyber d'Europe en nombre d'exposants : bon endroit pour repérer des employeurs."
+  },
+  {
+    "nom": "Hack In The Box (HITB)",
+    "type": "Conférence",
+    "lieu": "Asie (ville à confirmer)",
+    "periodeLibre": "Généralement fin été, dates et ville 2027 à annoncer",
+    "lien": "https://conference.hitb.org/",
+    "description": "Conférence technique réputée pour ses interventions pointues en recherche de vulnérabilités."
+  },
+  {
+    "nom": "Black Hat USA",
+    "type": "Conférence",
+    "lieu": "Las Vegas, États-Unis",
+    "debut": "2027-07-31",
+    "fin": "2027-08-05",
+    "lien": "https://www.blackhat.com/upcoming.html",
+    "description": "La plus grosse semaine de la cybersécurité mondiale, juste avant DEF CON, même ville."
+  },
+  {
+    "nom": "DEF CON",
+    "type": "Conférence",
+    "lieu": "Las Vegas, États-Unis",
+    "debut": "2027-08-05",
+    "fin": "2027-08-08",
+    "lien": "https://defcon.org/",
+    "description": "La plus grande conférence hacker au monde : villages thématiques, CTF, ambiance unique."
+  }
+]

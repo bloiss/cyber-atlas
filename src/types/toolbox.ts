@@ -6,18 +6,18 @@ export type Toolbox = {
    */
   nom: string;
   categorie:
-    | 'Réseau'
-    | 'Web'
-    | 'OSINT'
-    | 'Crypto'
-    | 'Stéganographie'
-    | 'Forensic'
-    | 'Reverse'
-    | 'Mots de passe'
-    | 'Pentest'
-    | 'Défense'
-    | 'Lab';
-  niveau: 'Essentiel' | 'Utile' | 'Avancé';
+    | "Réseau"
+    | "Web"
+    | "OSINT"
+    | "Crypto"
+    | "Stéganographie"
+    | "Forensic"
+    | "Reverse"
+    | "Mots de passe"
+    | "Pentest"
+    | "Défense"
+    | "Lab";
+  niveau: "Essentiel" | "Utile" | "Avancé";
   /**
    * Une phrase : à quoi ça sert
    */

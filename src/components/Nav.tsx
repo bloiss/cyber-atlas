@@ -10,6 +10,7 @@ const COUNT = {
   projets: D.projets.length,
   metiers: D.metiers.length,
   certifications: D.certifications.length,
+  agenda: D.agenda.length,
 };
 
 export function Nav({
@@ -40,22 +41,26 @@ export function Nav({
       </div>
       <div className="nav-group">
         <span className="eyebrow">Apprendre</span>
+        {link('#cours', 'Cours')}
         {link('#plateformes', 'Plateformes', String(COUNT.plateformes))}
         {link('#bibliotheque', 'Bibliothèque', String(COUNT.bibliotheque))}
         {link('#lexique', 'Lexique', String(COUNT.lexique))}
         {link('#cheatsheets', 'Cheatsheets')}
         {link('#anki', 'Cartes Anki', String(COUNT.anki))}
+        {link('#carnet', 'Carnet de révision')}
       </div>
       <div className="nav-group">
         <span className="eyebrow">Pratiquer</span>
         {link('#toolbox', 'Toolbox', String(COUNT.toolbox))}
         {link('#veille', 'Veille', String(COUNT.veille))}
+        {link('#agenda', 'Agenda cyber', String(COUNT.agenda))}
         {link('#charte', 'Charte éthique')}
         {link('#bonnes-pratiques', 'Bonnes pratiques')}
       </div>
       <div className="nav-group">
         <span className="eyebrow">Avancer</span>
         {link('#eloquence', 'Éloquence')}
+        {link('#bloc-notes', 'Bloc-notes')}
         {link('#projets', 'Projets', String(COUNT.projets))}
         {link('#metiers', 'Métiers', String(COUNT.metiers))}
         {link('#certifications', 'Certifications', String(COUNT.certifications))}

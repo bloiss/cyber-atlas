@@ -1,0 +1,126 @@
+[
+  {
+    "id": "se-reperer",
+    "titre": "Se repérer dans le terminal",
+    "ordre": 1,
+    "duree": "20 min",
+    "objectifs": [
+      "Lire une invite de commande et savoir où tu es",
+      "Te déplacer dans l'arborescence avec cd",
+      "Lister le contenu d'un dossier, y compris les fichiers cachés"
+    ],
+    "contenuMarkdown": "## Le terminal, pas à pas\n\nTout part de la racine `/` : un seul arbre de dossiers, pas de lettres de lecteur comme sous Windows. Ton dossier personnel est `/home/ton-nom`, raccourci en `~`.\n\nL'invite ressemble à :\n\n```\nlois@kali:~/labs$\n```\n\n`lois` est l'utilisateur, `kali` la machine, `~/labs` le dossier courant. Le `$` final veut dire que tu n'es pas root (un `#` voudrait dire que tu l'es — à utiliser avec prudence).\n\n## Les trois commandes de base\n\n```\npwd            # affiche le dossier où tu es (print working directory)\nls             # liste ce qu'il y a dedans\nls -la         # liste tout, y compris les fichiers cachés (ceux qui commencent par un point), avec les détails\ncd dossier     # entre dans « dossier »\ncd ..          # remonte d'un niveau\ncd ~           # revient à ton dossier personnel\ncd /var/log    # chemin absolu : toujours valable, peu importe où tu es\n```\n\nUn chemin qui commence par `/` est **absolu** (part de la racine). Un chemin sans `/` au début est **relatif** (part d'où tu es). C'est la confusion la plus fréquente en débutant : si une commande dit « fichier introuvable », vérifie d'abord avec `pwd` où tu es vraiment.",
+    "memo": [
+      "`/` est la racine de tout, `~` est ton dossier personnel",
+      "`pwd` : où je suis. `ls -la` : ce qu'il y a, y compris les fichiers cachés",
+      "`cd ..` remonte d'un niveau, `cd -` revient au dossier précédent",
+      "Chemin absolu = commence par `/` (toujours valable) ; chemin relatif = part d'où tu es",
+      "`$` = utilisateur normal, `#` = root"
+    ],
+    "exercices": [
+      {
+        "enonce": "Depuis ton dossier personnel, affiche le contenu détaillé de `/etc` sans y entrer (reste dans `~`).",
+        "indice": "Une commande peut prendre un chemin absolu en argument, pas besoin de `cd` avant.",
+        "solution": "`ls -la /etc` — pas besoin de te déplacer, `ls` accepte un chemin en argument."
+      },
+      {
+        "enonce": "Tu es dans `/home/lois/labs/web`. En une seule commande, reviens à ton dossier personnel.",
+        "indice": "Il existe un raccourci à un seul caractère pour « mon dossier personnel ».",
+        "solution": "`cd ~` (ou simplement `cd` sans argument, qui fait la même chose)."
+      }
+    ]
+  },
+  {
+    "id": "fichiers-permissions",
+    "titre": "Fichiers et permissions",
+    "ordre": 2,
+    "duree": "25 min",
+    "objectifs": [
+      "Lire, copier, déplacer et supprimer des fichiers en confiance",
+      "Lire une ligne de permissions (rwx) et savoir ce qu'elle autorise",
+      "Changer les permissions et le propriétaire d'un fichier"
+    ],
+    "contenuMarkdown": "## Manipuler des fichiers\n\n```\ncat fichier.txt        # affiche tout le contenu\nless fichier.txt        # affiche page par page (q pour quitter)\ncp source.txt copie.txt # copie\nmv a.txt b.txt          # déplace ou renomme\nrm fichier.txt           # supprime (pas de corbeille, donc prudence)\n```\n\n## Lire les permissions\n\n`ls -la` affiche une ligne comme celle-ci pour chaque fichier :\n\n```\n-rwxr-x--- 1 lois staff 1240 oct. 15 10:02 script.sh\n```\n\nLe premier caractère dit le type (`-` fichier, `d` dossier). Les neuf suivants se lisent par groupes de trois : **propriétaire**, **groupe**, **autres**. Chaque groupe est `r` (lecture), `w` (écriture), `x` (exécution), ou `-` si le droit est absent.\n\nIci : le propriétaire peut tout faire (`rwx`), le groupe peut lire et exécuter (`r-x`), les autres ne peuvent rien (`---`).\n\n## Changer les permissions\n\n```\nchmod 750 script.sh          # même résultat que l'exemple ci-dessus, en octal\nchmod u+x script.sh          # ajoute juste le droit d'exécution au propriétaire\nchown lois:staff fichier.txt  # change le propriétaire et le groupe\n```\n\nEn octal, chaque chiffre est la somme de `r=4, w=2, x=1` pour un groupe : `7 = rwx`, `5 = r-x`, `0 = ---`. C'est pour ça que `750` et l'exemple au-dessus sont identiques.",
+    "memo": [
+      "`cat` affiche tout, `less` affiche page par page",
+      "Permissions lues par trois : propriétaire / groupe / autres, chacun en rwx",
+      "Octal : r=4, w=2, x=1 — additionne pour obtenir le chiffre (ex. rwx=7, r-x=5)",
+      "`chmod` change les droits, `chown` change le propriétaire",
+      "`rm` est définitif : pas de corbeille en ligne de commande"
+    ],
+    "exercices": [
+      {
+        "enonce": "Un fichier affiche `-rw-r--r--`. Décris en français ce que peuvent faire le propriétaire, le groupe et les autres.",
+        "indice": "Découpe les 9 caractères par groupes de 3 : rw- / r-- / r--.",
+        "solution": "Propriétaire : lecture et écriture (pas exécution). Groupe : lecture seule. Autres : lecture seule."
+      },
+      {
+        "enonce": "Donne la commande `chmod` en octal pour obtenir exactement `-rwxr-x---`.",
+        "indice": "Calcule chaque groupe séparément : rwx, puis r-x, puis ---.",
+        "solution": "`chmod 750 fichier` — rwx=7, r-x=5, ---=0."
+      }
+    ]
+  },
+  {
+    "id": "chercher-filtrer",
+    "titre": "Chercher et filtrer",
+    "ordre": 3,
+    "duree": "25 min",
+    "objectifs": [
+      "Trouver un texte dans un ou plusieurs fichiers avec grep",
+      "Trouver des fichiers par nom ou par type avec find",
+      "Enchaîner des commandes avec des pipes et des redirections"
+    ],
+    "contenuMarkdown": "## grep : chercher du texte\n\n```\ngrep \"erreur\" journal.log          # lignes contenant « erreur »\ngrep -i \"erreur\" journal.log        # insensible à la casse\ngrep -r \"motdepasse\" dossier/        # cherche récursivement dans tout un dossier\ngrep -v \"debug\" journal.log          # inverse : les lignes qui NE contiennent PAS « debug »\n```\n\n## find : chercher des fichiers\n\n```\nfind . -name \"*.conf\"                       # fichiers .conf à partir d'ici\nfind / -name \"*.conf\" 2>/dev/null            # pareil depuis la racine, erreurs masquées\nfind . -type d -name \"backup*\"               # uniquement des dossiers\n```\n\n## Pipes et redirections\n\nLe symbole `|` (pipe) envoie la sortie d'une commande comme entrée de la suivante. C'est ce qui rend le terminal puissant : on combine des petits outils plutôt que d'en chercher un gros qui fait tout.\n\n```\nps aux | grep ssh          # liste les processus, ne garde que ceux qui parlent de ssh\ncat journal.log | wc -l     # compte le nombre de lignes du fichier\nls -la > liste.txt          # écrit la sortie dans un fichier (écrase s'il existe)\nls -la >> liste.txt         # ajoute à la fin du fichier, sans écraser\n```\n\n`2>/dev/null` dans l'exemple `find` redirige spécifiquement les messages d'erreur (le flux 2) vers « nulle part » : utile quand une commande râle pour des dossiers sans accès, sans que ça noie le résultat utile.",
+    "memo": [
+      "`grep \"motif\" fichier` cherche du texte ; `-i` ignore la casse, `-r` cherche récursivement",
+      "`find . -name \"*.ext\"` cherche des fichiers par nom à partir d'ici",
+      "`|` (pipe) enchaîne : la sortie de gauche devient l'entrée de droite",
+      "`>` écrase un fichier avec la sortie, `>>` ajoute à la fin",
+      "`2>/dev/null` masque les messages d'erreur, pas les résultats"
+    ],
+    "exercices": [
+      {
+        "enonce": "Écris une commande qui liste tous les processus et ne garde que les lignes contenant « apache ».",
+        "indice": "`ps aux` liste les processus ; il faut enchaîner avec un filtre texte.",
+        "solution": "`ps aux | grep apache`"
+      },
+      {
+        "enonce": "Cherche tous les fichiers `.log` dans `/var/log`, en masquant les erreurs de permission.",
+        "indice": "`find` prend un dossier de départ, un filtre `-name`, et la redirection d'erreur se met à la fin.",
+        "solution": "`find /var/log -name \"*.log\" 2>/dev/null`"
+      }
+    ]
+  },
+  {
+    "id": "premiers-scripts",
+    "titre": "Premiers scripts Bash",
+    "ordre": 4,
+    "duree": "30 min",
+    "objectifs": [
+      "Écrire et exécuter un script Bash",
+      "Utiliser des variables, une condition et une boucle",
+      "Lire les arguments passés au script"
+    ],
+    "contenuMarkdown": "## Ton premier script\n\nCrée un fichier `salut.sh` :\n\n```bash\n#!/bin/bash\nnom=\"$1\"\nif [ -z \"$nom\" ]; then\n  echo \"Usage : $0 <nom>\"\n  exit 1\nfi\necho \"Salut, $nom !\"\n```\n\nLa première ligne (`#!/bin/bash`) dit au système quel interpréteur utiliser. `$1` est le premier argument passé au script, `$0` est le nom du script lui-même. Rends-le exécutable puis lance-le :\n\n```\nchmod +x salut.sh\n./salut.sh Loïs\n```\n\n## Variables, conditions, boucles\n\n```bash\n# Variable : pas d'espace autour du =\ncible=\"192.168.1.10\"\n\n# Condition\nif [ \"$cible\" = \"192.168.1.10\" ]; then\n  echo \"C'est la bonne cible\"\nelse\n  echo \"Autre machine\"\nfi\n\n# Boucle sur une liste\nfor port in 22 80 443; do\n  echo \"Port à tester : $port\"\ndone\n\n# Boucle sur les lignes d'un fichier\nwhile read -r ligne; do\n  echo \"Lu : $ligne\"\ndone < liste.txt\n```\n\n`[ -z \"$nom\" ]` teste si la variable est vide — toujours mettre les variables entre guillemets dans les tests, sinon un script peut planter sur une valeur contenant des espaces.",
+    "memo": [
+      "`#!/bin/bash` en première ligne, puis `chmod +x` pour rendre le script exécutable",
+      "`$1`, `$2`… sont les arguments ; `$0` est le nom du script",
+      "`[ -z \"$var\" ]` teste une variable vide — toujours entre guillemets",
+      "`for x in a b c; do … done` boucle sur une liste",
+      "`while read -r ligne; do … done < fichier` boucle sur les lignes d'un fichier"
+    ],
+    "exercices": [
+      {
+        "enonce": "Écris un script qui prend un nom de fichier en argument et affiche « existe » ou « n'existe pas ».",
+        "indice": "Le test `[ -f \"$1\" ]` est vrai si le fichier existe.",
+        "solution": "```bash\n#!/bin/bash\nif [ -f \"$1\" ]; then\n  echo \"existe\"\nelse\n  echo \"n'existe pas\"\nfi\n```"
+      },
+      {
+        "enonce": "Écris une boucle qui affiche les nombres de 1 à 5.",
+        "indice": "Bash sait générer une séquence avec `{1..5}`.",
+        "solution": "```bash\nfor i in {1..5}; do\n  echo \"$i\"\ndone\n```"
+      }
+    ]
+  }
+]

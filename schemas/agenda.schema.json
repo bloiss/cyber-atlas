@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Agenda cyber mondial",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["nom", "type", "lieu", "lien", "description"],
+    "additionalProperties": false,
+    "properties": {
+      "nom": { "type": "string" },
+      "type": { "type": "string", "enum": ["Conférence", "CTF", "Salon"] },
+      "lieu": { "type": "string" },
+      "debut": {
+        "type": "string",
+        "format": "date",
+        "description": "AAAA-MM-JJ. Omis si la date officielle n'est pas encore annoncée (utiliser periodeLibre à la place)."
+      },
+      "fin": {
+        "type": "string",
+        "format": "date",
+        "description": "AAAA-MM-JJ. Omis si la date officielle n'est pas encore annoncée."
+      },
+      "periodeLibre": {
+        "type": "string",
+        "description": "Texte libre utilisé seulement quand debut/fin sont absents, ex. « Chaque printemps (mars), dates 2027 à annoncer »."
+      },
+      "lien": { "type": "string", "format": "uri", "pattern": "^https://" },
+      "description": { "type": "string", "description": "Une phrase : pourquoi s'y intéresser" }
+    }
+  }
+}

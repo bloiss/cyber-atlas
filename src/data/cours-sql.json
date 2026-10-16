@@ -1,0 +1,126 @@
+[
+  {
+    "id": "les-bases",
+    "titre": "Les bases : SELECT, WHERE, ORDER BY",
+    "ordre": 1,
+    "duree": "20 min",
+    "objectifs": [
+      "Lire et écrire une requête SELECT simple",
+      "Filtrer des résultats avec WHERE",
+      "Trier des résultats avec ORDER BY"
+    ],
+    "contenuMarkdown": "## Une table, des lignes\n\nUne base de données relationnelle range l'information dans des tables : des colonnes nommées, des lignes de données. Imagine une table `utilisateurs` :\n\n```\nid | nom     | ville   | age\n1  | Dupont  | Rennes  | 22\n2  | Martin  | Nantes  | 19\n3  | Petit   | Rennes  | 27\n```\n\n## SELECT : choisir des colonnes\n\n```sql\nSELECT nom, ville FROM utilisateurs;\nSELECT * FROM utilisateurs;   -- * veut dire « toutes les colonnes »\n```\n\n## WHERE : filtrer des lignes\n\n```sql\nSELECT nom FROM utilisateurs WHERE ville = 'Rennes';\nSELECT nom FROM utilisateurs WHERE age > 20;\nSELECT nom FROM utilisateurs WHERE ville = 'Rennes' AND age > 20;\n```\n\n## ORDER BY : trier\n\n```sql\nSELECT nom, age FROM utilisateurs ORDER BY age;        -- croissant par défaut\nSELECT nom, age FROM utilisateurs ORDER BY age DESC;    -- décroissant\n```\n\nUne requête SQL se lit presque comme une phrase : « sélectionne le nom et la ville, depuis les utilisateurs, où la ville est Rennes ». C'est voulu — SQL a été conçu dans les années 1970 pour rester lisible par des non-programmeurs.",
+    "memo": [
+      "`SELECT colonnes FROM table;` — `*` veut dire toutes les colonnes",
+      "`WHERE condition` filtre les lignes ; `AND`/`OR` combinent plusieurs conditions",
+      "`ORDER BY colonne` trie (ajoute `DESC` pour l'ordre décroissant)",
+      "Les chaînes de texte se mettent entre guillemets simples : `'Rennes'`",
+      "Chaque requête se termine par un point-virgule `;`"
+    ],
+    "exercices": [
+      {
+        "enonce": "Écris une requête qui affiche le nom et l'âge des utilisateurs de Nantes, triés par âge décroissant.",
+        "indice": "Combine SELECT, WHERE et ORDER BY ... DESC.",
+        "solution": "```sql\nSELECT nom, age FROM utilisateurs WHERE ville = 'Nantes' ORDER BY age DESC;\n```"
+      },
+      {
+        "enonce": "Écris une requête qui affiche tous les utilisateurs de Rennes âgés de plus de 25 ans.",
+        "indice": "Deux conditions à combiner avec AND.",
+        "solution": "```sql\nSELECT * FROM utilisateurs WHERE ville = 'Rennes' AND age > 25;\n```"
+      }
+    ]
+  },
+  {
+    "id": "jointures-agregations",
+    "titre": "Jointures et agrégations",
+    "ordre": 2,
+    "duree": "25 min",
+    "objectifs": [
+      "Combiner deux tables avec JOIN",
+      "Compter et regrouper des résultats avec GROUP BY et COUNT",
+      "Comprendre pourquoi on sépare les données en plusieurs tables"
+    ],
+    "contenuMarkdown": "## Pourquoi plusieurs tables\n\nAu lieu de répéter la ville dans chaque commande d'un client, on sépare les données : une table `utilisateurs`, une table `commandes` qui référence l'utilisateur par son `id`. Ça évite les doublons et les incohérences.\n\n```\ncommandes :\nid | user_id | total\n1  | 1       | 42.50\n2  | 1       | 15.00\n3  | 2       | 99.90\n```\n\n## JOIN : relier deux tables\n\n```sql\nSELECT utilisateurs.nom, commandes.total\nFROM utilisateurs\nJOIN commandes ON commandes.user_id = utilisateurs.id;\n```\n\n`ON` dit comment les deux tables se correspondent : ici, `user_id` dans `commandes` pointe vers `id` dans `utilisateurs`. Avec des alias, c'est plus court à écrire :\n\n```sql\nSELECT u.nom, c.total\nFROM utilisateurs u\nJOIN commandes c ON c.user_id = u.id;\n```\n\n## GROUP BY et fonctions d'agrégation\n\n```sql\nSELECT ville, COUNT(*) AS nb\nFROM utilisateurs\nGROUP BY ville;\n\nSELECT u.nom, SUM(c.total) AS total_depense\nFROM utilisateurs u\nJOIN commandes c ON c.user_id = u.id\nGROUP BY u.nom;\n```\n\n`GROUP BY` rassemble les lignes qui partagent une valeur (ici, la ville) pour calculer une statistique par groupe : `COUNT` compte, `SUM` additionne, `AVG` fait la moyenne. `AS` donne juste un nom plus lisible à la colonne de résultat.",
+    "memo": [
+      "Séparer les données en plusieurs tables évite les doublons (une ville par utilisateur, pas répétée par commande)",
+      "`JOIN table2 ON condition` relie deux tables sur une colonne commune",
+      "`GROUP BY colonne` regroupe les lignes qui partagent une valeur",
+      "`COUNT(*)`, `SUM(colonne)`, `AVG(colonne)` calculent une statistique par groupe",
+      "`AS` renomme une colonne de résultat, uniquement pour la lisibilité"
+    ],
+    "exercices": [
+      {
+        "enonce": "Écris une requête qui affiche, pour chaque ville, le nombre d'utilisateurs qui y habitent.",
+        "indice": "GROUP BY sur la colonne ville, COUNT(*) pour compter.",
+        "solution": "```sql\nSELECT ville, COUNT(*) AS nb FROM utilisateurs GROUP BY ville;\n```"
+      },
+      {
+        "enonce": "Écris une requête qui affiche le nom de chaque utilisateur et le total de toutes ses commandes.",
+        "indice": "JOIN entre utilisateurs et commandes, puis GROUP BY sur le nom, avec SUM.",
+        "solution": "```sql\nSELECT u.nom, SUM(c.total) AS total\nFROM utilisateurs u\nJOIN commandes c ON c.user_id = u.id\nGROUP BY u.nom;\n```"
+      }
+    ]
+  },
+  {
+    "id": "modifier-donnees",
+    "titre": "Modifier les données",
+    "ordre": 3,
+    "duree": "20 min",
+    "objectifs": [
+      "Ajouter, modifier et supprimer des lignes",
+      "Comprendre pourquoi ces commandes sont sensibles",
+      "Prendre le réflexe de tester un WHERE avec un SELECT avant un UPDATE/DELETE"
+    ],
+    "contenuMarkdown": "## INSERT, UPDATE, DELETE\n\n```sql\nINSERT INTO utilisateurs (nom, ville, age) VALUES ('Leroy', 'Brest', 24);\n\nUPDATE utilisateurs SET ville = 'Paris' WHERE id = 3;\n\nDELETE FROM utilisateurs WHERE id = 3;\n```\n\n## Pourquoi c'est sensible\n\nContrairement à `SELECT`, ces commandes **changent** les données — et si tu oublies le `WHERE` :\n\n```sql\nUPDATE utilisateurs SET ville = 'Paris';   -- change TOUT LE MONDE en Paris\nDELETE FROM utilisateurs;                   -- vide TOUTE la table\n```\n\nC'est l'erreur classique en production : pas de faute de syntaxe, la base l'exécute très bien, mais le résultat est une catastrophe. Le réflexe professionnel : transformer d'abord ton `UPDATE`/`DELETE` en `SELECT` avec la même clause `WHERE`, vérifier que ça ne cible que les bonnes lignes, et seulement après repasser en `UPDATE`/`DELETE`.\n\n```sql\n-- D'abord, vérifier ce qui sera touché :\nSELECT * FROM utilisateurs WHERE ville = 'Rennes' AND age < 18;\n\n-- Seulement si le résultat est bien celui attendu :\nDELETE FROM utilisateurs WHERE ville = 'Rennes' AND age < 18;\n```\n\nC'est aussi pour cette raison que la plupart des bases de production tournent avec des comptes aux droits limités : un compte qui n'a pas le droit de `DELETE` ne peut pas faire ce genre d'erreur, même par accident.",
+    "memo": [
+      "`INSERT INTO table (colonnes) VALUES (valeurs);` ajoute une ligne",
+      "`UPDATE table SET colonne = valeur WHERE condition;` modifie",
+      "`DELETE FROM table WHERE condition;` supprime",
+      "Sans WHERE, UPDATE et DELETE touchent TOUTE la table — toujours vérifier avec un SELECT d'abord",
+      "En production, limiter les droits des comptes réduit le risque d'erreur destructrice"
+    ],
+    "exercices": [
+      {
+        "enonce": "Écris la requête pour changer l'âge de l'utilisateur d'id 2 à 20 ans.",
+        "indice": "UPDATE avec un WHERE précis sur l'id.",
+        "solution": "```sql\nUPDATE utilisateurs SET age = 20 WHERE id = 2;\n```"
+      },
+      {
+        "enonce": "Avant de supprimer tous les utilisateurs de Brest, écris la requête SELECT qui vérifie qui serait concerné.",
+        "indice": "Même clause WHERE que le DELETE prévu, mais en SELECT *.",
+        "solution": "```sql\nSELECT * FROM utilisateurs WHERE ville = 'Brest';\n```"
+      }
+    ]
+  },
+  {
+    "id": "injection-sql",
+    "titre": "Comprendre et prévenir l'injection SQL",
+    "ordre": 4,
+    "duree": "25 min",
+    "objectifs": [
+      "Comprendre comment une injection SQL se produit",
+      "Reconnaître une requête vulnérable",
+      "Écrire une requête préparée pour s'en protéger"
+    ],
+    "contenuMarkdown": "## Comment ça arrive\n\nUne injection SQL se produit quand une application colle directement la saisie d'un utilisateur dans une requête, sans la séparer du code SQL. La saisie peut alors changer le **sens** de la requête.\n\nImagine un formulaire de connexion qui construit sa requête comme ceci (vulnérable) :\n\n```python\nrequete = \"SELECT * FROM utilisateurs WHERE nom = '\" + nom_saisi + \"'\"\n```\n\nSi un visiteur tape normalement `Dupont`, ça donne :\n\n```sql\nSELECT * FROM utilisateurs WHERE nom = 'Dupont'\n```\n\nMais s'il tape `' OR '1'='1`, la requête devient :\n\n```sql\nSELECT * FROM utilisateurs WHERE nom = '' OR '1'='1'\n```\n\n`'1'='1'` est toujours vrai, donc la condition `WHERE` devient toujours vraie : la requête renvoie TOUS les utilisateurs, pas seulement celui attendu. C'est la version la plus simple d'une injection ; des variantes plus poussées peuvent lire d'autres tables, voire modifier ou supprimer des données.\n\n## La protection : les requêtes préparées\n\nLa solution n'est pas de « filtrer les caractères dangereux » (liste jamais complète), mais de séparer structurellement le code SQL de la donnée, avec une requête préparée :\n\n```python\n# Vulnérable\ncursor.execute(\"SELECT * FROM utilisateurs WHERE nom = '\" + nom + \"'\")\n\n# Sûr : la saisie reste une donnée, jamais du code\ncursor.execute(\"SELECT * FROM utilisateurs WHERE nom = %s\", (nom,))\n```\n\nAvec `%s` (ou `?` selon la bibliothèque), le pilote de base de données envoie le texte de la requête ET la valeur séparément à la base — la valeur ne peut jamais être interprétée comme du SQL, peu importe ce qu'elle contient. C'est exactement l'entrée A05 « Injection » de l'OWASP Top 10, et la requête préparée en est la défense de référence, dans tous les langages.",
+    "memo": [
+      "L'injection SQL vient d'une saisie collée directement dans une requête, sans séparation code/donnée",
+      "`' OR '1'='1` est l'exemple classique : rend la condition WHERE toujours vraie",
+      "Filtrer des caractères « dangereux » n'est jamais une protection fiable ni complète",
+      "La requête préparée (`%s`, `?`) sépare structurellement le SQL de la donnée",
+      "C'est l'entrée A05 de l'OWASP Top 10 — vue en détail dans Cheatsheets"
+    ],
+    "exercices": [
+      {
+        "enonce": "Cette requête Python est-elle vulnérable ? Pourquoi ?\n```python\ncursor.execute(f\"SELECT * FROM produits WHERE id = {id_produit}\")\n```",
+        "indice": "Regarde comment `id_produit` est inséré dans la chaîne.",
+        "solution": "Oui : `id_produit` est collé directement dans le texte de la requête via une f-string, exactement comme une concaténation. Si `id_produit` vient d'une saisie utilisateur non contrôlée, c'est injectable."
+      },
+      {
+        "enonce": "Réécris la requête précédente en version sûre, avec une requête préparée.",
+        "indice": "Remplace la f-string par un paramètre séparé.",
+        "solution": "```python\ncursor.execute(\"SELECT * FROM produits WHERE id = %s\", (id_produit,))\n```"
+      }
+    ]
+  }
+]

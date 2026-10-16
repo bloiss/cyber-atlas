@@ -2,7 +2,7 @@
 
 export type Metiers = {
   metier: string;
-  equipe: 'Défense' | 'Offensif' | 'Gouvernance' | 'Ingénierie';
+  equipe: "Défense" | "Offensif" | "Gouvernance" | "Ingénierie";
   quotidien: string;
   competences: string;
   salaire: string;

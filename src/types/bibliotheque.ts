@@ -2,12 +2,12 @@
 
 export type Bibliotheque = {
   titre: string;
-  format: 'YouTube' | 'Cours' | 'Documentaire' | 'Série' | 'Podcast' | 'Livre';
+  format: "YouTube" | "Cours" | "Documentaire" | "Série" | "Podcast" | "Livre";
   /**
    * @minItems 1
    */
   themes: [string, ...string[]];
-  langue: 'FR' | 'EN';
+  langue: "FR" | "EN";
   lien: string;
   pourquoi: string;
 }[];

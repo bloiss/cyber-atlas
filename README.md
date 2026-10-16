@@ -55,6 +55,12 @@ cyber-atlas/
 │   │   ├── certifications.json
 │   │   ├── anki.json
 │   │   ├── projets.json
+│   │   ├── agenda.json
+│   │   ├── cours-linux.json
+│   │   ├── cours-python.json
+│   │   ├── cours-sql.json
+│   │   ├── cours-reseau.json
+│   │   ├── matieres.ts        Les 4 matières (id, nom, description), pas un JSON (liste fixe)
 │   │   └── index.ts          Importe et type tous les JSON ci-dessus
 │   └── types/                 Types TypeScript générés depuis schemas/ (ne pas éditer à la main)
 ├── public/assets/         Logo, favicon, paquet Anki (.apkg) et cartes en CSV (servis tels quels)
@@ -106,6 +112,13 @@ la case cochée) :
 Dans `src/data/projets.json` : `titre`, `type` (Write-up CTF / Lab / Projet perso / Rapport d'incident), `niveau`,
 `date` (AAAA-MM), `resume`, `outils` et `lien` (laisse `""` si pas encore publié).
 
+### Ajouter un chapitre de cours
+
+Dans le bon `src/data/cours-<matiere>.json`, ajoute un bloc avec un `ordre` qui le place dans la séquence :
+`id`, `titre`, `ordre`, `duree`, `objectifs` (liste), `contenuMarkdown` (le cours, en Markdown), `memo` (liste des
+points essentiels) et `exercices` (liste de `{ enonce, indice?, solution }`). Le chapitre apparaît automatiquement
+dans la liste de la matière, compteurs compris.
+
 ### Changer une valeur possible (enum) dans un schéma
 
 1. Édite `schemas/<fichier>.schema.json` (ex. ajouter une catégorie à `toolbox.schema.json`).
@@ -133,7 +146,10 @@ chaque push. Pas encore configuré — on le fera une fois les phases 3D validé
 ## 5. Idées pour la suite
 
 - [x] Une page **Projets** qui présente tes write-ups et projets (ton portfolio) — ajoute tes entrées dans `src/data/projets.json`.
-- [ ] Une page **Agenda** des CTF et événements rennais, depuis un `src/data/agenda.json` daté.
+- [x] Une page **Agenda** des grandes conférences et CTF mondiaux, depuis `src/data/agenda.json`.
+- [x] Une section **Cours** (Linux/Bash, Python, SQL, Réseau) avec exercices guidés et fiches PDF téléchargeables.
+- [x] Un **Carnet de révision** (`#carnet`) qui feuillette les cartes Anki en carnet deux pages.
+- [x] Un **Bloc-notes** (`#bloc-notes`) pour tes notes libres, sauvegardées dans ce navigateur.
 - [ ] Un mode **quiz** qui tire 10 cartes de `anki.json` au hasard.
 - [ ] Un compteur de jours consécutifs (« série ») dans la checklist du jour.
 - [ ] Un vrai formulaire de contribution (Formspree, Netlify Forms ou Tally) à la place du bouton « Copier ».

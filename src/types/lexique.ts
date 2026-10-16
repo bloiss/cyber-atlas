@@ -2,7 +2,7 @@
 
 export type Lexique = {
   terme: string;
-  domaine: 'Général' | 'Réseau' | 'Web' | 'Système' | 'Crypto' | 'Attaque' | 'Défense' | 'Organisation';
+  domaine: "Général" | "Réseau" | "Web" | "Système" | "Crypto" | "Attaque" | "Défense" | "Organisation";
   /**
    * Une ou deux phrases, en langage simple
    */

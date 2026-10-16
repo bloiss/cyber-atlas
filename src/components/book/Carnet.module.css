@@ -1,0 +1,222 @@
+.wrap {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.book {
+  perspective: 2000px;
+}
+
+.bookFrame {
+  position: relative;
+  height: clamp(420px, 55vh, 520px);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--sunken);
+  overflow: hidden;
+  box-shadow: 0 24px 50px -30px rgba(11, 18, 32, 0.45);
+}
+
+/* Reliure spirale centrale : le carnet s'ouvre toujours en deux pages, jamais une seule (règle du projet). */
+.spine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 36px;
+  margin-left: -18px;
+  background: var(--sunken);
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  z-index: 3;
+  box-shadow:
+    -6px 0 10px -6px rgba(11, 18, 32, 0.25) inset,
+    6px 0 10px -6px rgba(11, 18, 32, 0.25) inset;
+}
+
+.spine span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--line);
+}
+
+.leftPage,
+.rightPage,
+.leaf {
+  position: absolute;
+  inset: 0;
+  padding: 26px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--surface);
+}
+
+.leftPage {
+  right: 50%;
+  padding-right: 28px;
+  background: linear-gradient(to right, var(--surface) 92%, var(--sunken));
+  border-radius: var(--r) 0 0 var(--r);
+  z-index: 1;
+}
+
+.rightPage {
+  left: 50%;
+  padding-left: 28px;
+  background: linear-gradient(to left, var(--surface) 92%, var(--sunken));
+  border-radius: 0 var(--r) var(--r) 0;
+  z-index: 1;
+}
+
+.leaf {
+  z-index: 2;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  backface-visibility: hidden;
+}
+
+.leafRight {
+  left: 50%;
+  padding-left: 28px;
+  transform-origin: left center;
+  transform: rotateY(0deg);
+  box-shadow: -14px 0 30px -14px rgba(11, 18, 32, 0.4);
+}
+
+.leafLeft {
+  right: 50%;
+  padding-right: 28px;
+  transform-origin: right center;
+  transform: rotateY(0deg);
+  box-shadow: 14px 0 30px -14px rgba(11, 18, 32, 0.4);
+}
+
+.leafRight.leafFlipped {
+  transform: rotateY(-170deg);
+}
+
+.leafLeft.leafFlipped {
+  transform: rotateY(170deg);
+}
+
+.cover {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  padding: 0 40px;
+  background: linear-gradient(160deg, var(--accent-soft), var(--surface));
+  transform-origin: left center;
+  transform: rotateY(0deg);
+  transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+  backface-visibility: hidden;
+  border-radius: var(--r);
+}
+
+.coverOpen {
+  transform: rotateY(-170deg);
+}
+
+.cardTheme {
+  align-self: flex-start;
+}
+
+.question {
+  font-family: var(--f-display);
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.answer {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.controls button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.counter {
+  font-family: var(--f-mono);
+  font-size: 0.85rem;
+  color: var(--muted);
+  min-width: 64px;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .bookFrame {
+    height: auto;
+  }
+
+  .bookFrame {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .spine {
+    position: static;
+    order: 2;
+    left: auto;
+    width: auto;
+    height: 28px;
+    margin-left: 0;
+    flex-direction: row;
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    box-shadow: none;
+  }
+
+  .leftPage,
+  .rightPage,
+  .leafRight,
+  .leafLeft {
+    position: static;
+    inset: auto;
+    width: auto;
+    border-radius: 0;
+    background: var(--surface);
+  }
+
+  .leftPage {
+    order: 1;
+    border-radius: var(--r) var(--r) 0 0;
+    padding: 22px 22px 18px;
+  }
+
+  .rightPage {
+    order: 3;
+    border-radius: 0 0 var(--r) var(--r);
+    padding: 18px 22px 22px;
+  }
+
+  /* Sous 720 px, on garde les deux pages (format obligatoire) mais empilées : la reliure devient horizontale,
+     et le petit flip 3D cède la place à un changement instantané (cohérent avec l'allègement mobile). */
+  .leaf {
+    display: none;
+  }
+}

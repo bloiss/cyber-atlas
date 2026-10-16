@@ -19,11 +19,16 @@ import { ToolboxPage } from './pages/ToolboxPage';
 import { BibliothequePage } from './pages/BibliothequePage';
 import { LexiquePage } from './pages/LexiquePage';
 import { CheatsheetsPage } from './pages/CheatsheetsPage';
+import { CoursPage } from './pages/CoursPage';
+import { CoursMatierePage } from './pages/CoursMatierePage';
 import { AnkiPage } from './pages/AnkiPage';
+import { CarnetPage } from './pages/CarnetPage';
 import { VeillePage } from './pages/VeillePage';
+import { AgendaPage } from './pages/AgendaPage';
 import { ChartePage } from './pages/ChartePage';
 import { BonnesPratiquesPage } from './pages/BonnesPratiquesPage';
 import { EloquencePage } from './pages/EloquencePage';
+import { BlocNotesPage } from './pages/BlocNotesPage';
 import { ProjetsPage } from './pages/ProjetsPage';
 import { MetiersPage } from './pages/MetiersPage';
 import { CertificationsPage } from './pages/CertificationsPage';
@@ -98,11 +103,32 @@ export function App() {
           <Page id="cheatsheets" current={route}>
             <CheatsheetsPage />
           </Page>
+          <Page id="cours" current={route}>
+            <CoursPage />
+          </Page>
+          <Page id="cours-linux" current={route}>
+            <CoursMatierePage matiere="linux" />
+          </Page>
+          <Page id="cours-python" current={route}>
+            <CoursMatierePage matiere="python" />
+          </Page>
+          <Page id="cours-sql" current={route}>
+            <CoursMatierePage matiere="sql" />
+          </Page>
+          <Page id="cours-reseau" current={route}>
+            <CoursMatierePage matiere="reseau" />
+          </Page>
           <Page id="anki" current={route}>
             <AnkiPage />
           </Page>
+          <Page id="carnet" current={route}>
+            <CarnetPage />
+          </Page>
           <Page id="veille" current={route}>
             <VeillePage />
+          </Page>
+          <Page id="agenda" current={route}>
+            <AgendaPage />
           </Page>
           <Page id="charte" current={route}>
             <ChartePage />
@@ -112,6 +138,9 @@ export function App() {
           </Page>
           <Page id="eloquence" current={route}>
             <EloquencePage />
+          </Page>
+          <Page id="bloc-notes" current={route}>
+            <BlocNotesPage />
           </Page>
           <Page id="projets" current={route}>
             <ProjetsPage />

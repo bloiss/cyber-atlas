@@ -2,8 +2,8 @@
 
 export type Projets = {
   titre: string;
-  type: 'Write-up CTF' | 'Lab' | 'Projet perso' | "Rapport d'incident";
-  niveau: 'Débutant' | 'Intermédiaire' | 'Avancé';
+  type: "Write-up CTF" | "Lab" | "Projet perso" | "Rapport d'incident";
+  niveau: "Débutant" | "Intermédiaire" | "Avancé";
   /**
    * Année-mois, pour trier du plus récent au plus ancien
    */
@@ -16,5 +16,5 @@ export type Projets = {
   /**
    * Vers le write-up ou le dépôt GitHub. Laisse vide si pas encore publié.
    */
-  lien: ('' | string) & string;
+  lien: ("" | string) & string;
 }[];

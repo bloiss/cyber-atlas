@@ -2,13 +2,13 @@
 
 export type Plateformes = {
   nom: string;
-  niveau: 'Débutant' | 'Intermédiaire' | 'Avancé' | 'Tous niveaux';
+  niveau: "Débutant" | "Intermédiaire" | "Avancé" | "Tous niveaux";
   /**
    * @minItems 1
    */
   domaines: [string, ...string[]];
-  langue: 'FR' | 'EN';
-  cout: 'Gratuit' | 'Freemium' | 'Payant';
+  langue: "FR" | "EN";
+  cout: "Gratuit" | "Freemium" | "Payant";
   lien: string;
   pourquoi: string;
 }[];

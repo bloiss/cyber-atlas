@@ -1,0 +1,126 @@
+[
+  {
+    "id": "bases",
+    "titre": "Bases du langage",
+    "ordre": 1,
+    "duree": "25 min",
+    "objectifs": [
+      "Créer des variables et reconnaître les types de base",
+      "Écrire une condition if/elif/else",
+      "Écrire une boucle for et une boucle while"
+    ],
+    "contenuMarkdown": "## Variables et types\n\nPython ne demande pas de déclarer le type à l'avance : il le déduit de la valeur.\n\n```python\nnom = \"Loïs\"        # str (texte)\nage = 19            # int (entier)\ntaille = 1.78        # float (décimal)\nest_etudiant = True   # bool (vrai/faux)\n```\n\n`type(age)` te dit le type d'une variable si tu as un doute. L'indentation (les espaces en début de ligne) n'est pas décorative en Python : c'est elle qui délimite les blocs, à la place des accolades `{}` d'autres langages.\n\n## Conditions\n\n```python\nniveau = 7\n\nif niveau >= 8:\n    print(\"Expert\")\nelif niveau >= 4:\n    print(\"Intermédiaire\")\nelse:\n    print(\"Débutant\")\n```\n\n## Boucles\n\n```python\n# for : répète pour chaque élément\nfor port in [22, 80, 443]:\n    print(f\"Port : {port}\")\n\n# range() génère une séquence de nombres\nfor i in range(5):       # 0, 1, 2, 3, 4\n    print(i)\n\n# while : répète tant que la condition est vraie\ncompteur = 0\nwhile compteur < 3:\n    print(\"tour\", compteur)\n    compteur += 1\n```\n\nLe `f\"...{variable}\"` s'appelle une f-string : le moyen le plus simple d'insérer une variable dans du texte.",
+    "memo": [
+      "Pas de déclaration de type : Python le déduit (`str`, `int`, `float`, `bool`)",
+      "L'indentation délimite les blocs — 4 espaces, toujours les mêmes dans un fichier",
+      "`if` / `elif` / `else` pour les conditions",
+      "`for x in liste:` répète pour chaque élément ; `range(5)` génère 0 à 4",
+      "f-string : `f\"texte {variable}\"` pour insérer une valeur dans une chaîne"
+    ],
+    "exercices": [
+      {
+        "enonce": "Écris une boucle qui affiche les carrés des nombres de 1 à 5 (1, 4, 9, 16, 25).",
+        "indice": "`range(1, 6)` donne les nombres de 1 à 5 inclus ; `n * n` donne le carré.",
+        "solution": "```python\nfor n in range(1, 6):\n    print(n * n)\n```"
+      },
+      {
+        "enonce": "Écris une condition qui affiche « pair » ou « impair » selon la valeur d'une variable `n`.",
+        "indice": "Le reste d'une division s'obtient avec `%` ; pair = reste de 0 en divisant par 2.",
+        "solution": "```python\nif n % 2 == 0:\n    print(\"pair\")\nelse:\n    print(\"impair\")\n```"
+      }
+    ]
+  },
+  {
+    "id": "fonctions-structures",
+    "titre": "Fonctions et structures de données",
+    "ordre": 2,
+    "duree": "25 min",
+    "objectifs": [
+      "Écrire et appeler une fonction avec des paramètres",
+      "Manipuler une liste (ajouter, parcourir, filtrer)",
+      "Manipuler un dictionnaire (clé/valeur)"
+    ],
+    "contenuMarkdown": "## Fonctions\n\n```python\ndef saluer(nom, poli=True):\n    if poli:\n        return f\"Bonjour {nom}.\"\n    return f\"Salut {nom} !\"\n\nprint(saluer(\"Loïs\"))\nprint(saluer(\"Loïs\", poli=False))\n```\n\n`poli=True` est une valeur par défaut : l'appelant peut l'omettre. `return` renvoie une valeur à qui a appelé la fonction, sans l'afficher — c'est différent de `print()`.\n\n## Listes\n\n```python\nports = [22, 80, 443]\nports.append(8080)          # ajoute à la fin\nports.remove(80)             # retire la valeur 80\npremier = ports[0]           # accès par position (commence à 0)\n\n# Compréhension de liste : construit une nouvelle liste en une ligne\nouverts = [p for p in ports if p != 443]\n```\n\n## Dictionnaires\n\nUn dictionnaire associe des clés à des valeurs, utile pour représenter une fiche de données.\n\n```python\nservice = {\n    \"port\": 443,\n    \"protocole\": \"HTTPS\",\n    \"ouvert\": True,\n}\n\nprint(service[\"protocole\"])      # accès direct\nprint(service.get(\"version\", \"inconnue\"))  # valeur par défaut si la clé n'existe pas\n\nfor cle, valeur in service.items():\n    print(cle, \"->\", valeur)\n```\n\n`.get()` est plus sûr que `[\"clé\"]` quand tu n'es pas certain que la clé existe : il renvoie une valeur par défaut au lieu de faire planter le script.",
+    "memo": [
+      "`def nom(params):` définit une fonction ; `return` renvoie une valeur (différent de `print`)",
+      "Les paramètres peuvent avoir une valeur par défaut : `def f(x=10):`",
+      "Liste : `[]`, indexée depuis 0, `.append()` ajoute, `.remove()` retire",
+      "Compréhension de liste : `[expr for x in liste if condition]`",
+      "Dictionnaire : `{}`, accès par `d[\"clé\"]` ou `d.get(\"clé\", défaut)` pour éviter une erreur"
+    ],
+    "exercices": [
+      {
+        "enonce": "Écris une fonction `est_pair(n)` qui renvoie `True` ou `False`.",
+        "indice": "Utilise `return` avec une expression booléenne, pas un `if/else` à rallonge.",
+        "solution": "```python\ndef est_pair(n):\n    return n % 2 == 0\n```"
+      },
+      {
+        "enonce": "À partir de `ports = [21, 22, 80, 443, 3389]`, construis en une ligne la liste des ports strictement supérieurs à 100.",
+        "indice": "Compréhension de liste avec une condition.",
+        "solution": "`grands = [p for p in ports if p > 100]`  →  `[443, 3389]`"
+      }
+    ]
+  },
+  {
+    "id": "fichiers-reseau",
+    "titre": "Fichiers et réseau",
+    "ordre": 3,
+    "duree": "30 min",
+    "objectifs": [
+      "Lire et écrire un fichier texte",
+      "Faire une requête HTTP avec la bibliothèque requests",
+      "Comprendre à quoi sert le module socket"
+    ],
+    "contenuMarkdown": "## Lire et écrire un fichier\n\n```python\n# Lecture\nwith open(\"notes.txt\", \"r\") as f:\n    contenu = f.read()\n\n# Lecture ligne par ligne (économe en mémoire pour un gros fichier)\nwith open(\"journal.log\", \"r\") as f:\n    for ligne in f:\n        if \"erreur\" in ligne:\n            print(ligne.strip())\n\n# Écriture\nwith open(\"resultat.txt\", \"w\") as f:\n    f.write(\"Scan terminé\\n\")\n```\n\n`with open(...) as f:` ferme automatiquement le fichier à la fin du bloc, même en cas d'erreur — toujours préférable à `open()`/`close()` manuel.\n\n## Requêtes HTTP avec requests\n\n`requests` n'est pas installée par défaut : `pip install requests`.\n\n```python\nimport requests\n\nreponse = requests.get(\"https://example.com\")\nprint(reponse.status_code)     # 200, 404…\nprint(reponse.headers[\"Content-Type\"])\nprint(reponse.text[:200])       # les 200 premiers caractères de la page\n```\n\nC'est la base de n'importe quel script qui interroge une API ou vérifie si un site répond.\n\n## socket : la brique de base du réseau\n\n`requests` est construit par-dessus des sockets, mais comprendre `socket` directement aide à saisir ce qui se passe au niveau TCP :\n\n```python\nimport socket\n\ns = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # IPv4, TCP\ns.settimeout(1)\nresultat = s.connect_ex((\"127.0.0.1\", 22))  # 0 si le port répond, autre valeur sinon\ns.close()\nprint(\"ouvert\" if resultat == 0 else \"fermé/filtré\")\n```\n\nCe sera la base du script guidé du chapitre suivant : un mini scanner de ports, à utiliser uniquement sur tes propres machines ou un lab autorisé (voir la Charte).",
+    "memo": [
+      "`with open(fichier) as f:` ouvre et ferme proprement, même en cas d'erreur",
+      "Parcourir un fichier ligne par ligne évite de tout charger en mémoire",
+      "`requests.get(url).status_code` et `.text` sont les deux infos les plus utilisées",
+      "`socket.socket(AF_INET, SOCK_STREAM)` ouvre une connexion TCP IPv4",
+      "`connect_ex()` renvoie 0 si la connexion réussit : c'est la base d'un scanner de ports"
+    ],
+    "exercices": [
+      {
+        "enonce": "Écris un script qui lit `journal.log` ligne par ligne et compte combien de lignes contiennent le mot « échec ».",
+        "indice": "Un compteur initialisé à 0, incrémenté dans la boucle si le mot est présent.",
+        "solution": "```python\ncompteur = 0\nwith open(\"journal.log\") as f:\n    for ligne in f:\n        if \"échec\" in ligne:\n            compteur += 1\nprint(compteur)\n```"
+      },
+      {
+        "enonce": "Avec `requests`, écris un script qui affiche « en ligne » si `https://example.com` répond avec le code 200, sinon « problème ».",
+        "indice": "`reponse.status_code == 200`.",
+        "solution": "```python\nimport requests\nr = requests.get(\"https://example.com\")\nprint(\"en ligne\" if r.status_code == 200 else \"problème\")\n```"
+      }
+    ]
+  },
+  {
+    "id": "script-guide",
+    "titre": "Script guidé : mini scanner de ports",
+    "ordre": 4,
+    "duree": "35 min",
+    "objectifs": [
+      "Assembler boucle, fonction et socket dans un script complet",
+      "Comprendre chaque étape d'un scanner de ports simplifié",
+      "Savoir dans quel cadre légal l'utiliser"
+    ],
+    "contenuMarkdown": "## Avant de commencer\n\nCe script ne doit tourner que sur une machine qui t'appartient ou un lab où tu as le droit de tester (voir la page Charte). Scanner une machine sans autorisation est interdit par les articles 323-1 et suivants du Code pénal, même « juste pour voir ».\n\n## Le script, expliqué morceau par morceau\n\n```python\nimport socket\n\ndef tester_port(hote, port, delai=1):\n    \"\"\"Renvoie True si le port est ouvert, False sinon.\"\"\"\n    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    s.settimeout(delai)\n    resultat = s.connect_ex((hote, port))\n    s.close()\n    return resultat == 0\n\ndef scanner(hote, ports):\n    ouverts = []\n    for port in ports:\n        if tester_port(hote, port):\n            ouverts.append(port)\n            print(f\"Port {port} : ouvert\")\n        else:\n            print(f\"Port {port} : fermé ou filtré\")\n    return ouverts\n\nif __name__ == \"__main__\":\n    cible = \"127.0.0.1\"          # ta propre machine en local\n    ports_courants = [21, 22, 80, 443, 3306]\n    resultats = scanner(cible, ports_courants)\n    print(f\"\\nPorts ouverts sur {cible} : {resultats}\")\n```\n\n**Pourquoi découper en deux fonctions ?** `tester_port` fait une seule chose (tester un port) et peut être réutilisée ou testée seule. `scanner` s'occupe de la boucle et de l'affichage. C'est le même principe qu'en Bash au chapitre précédent : des petites briques qu'on assemble, plutôt qu'un seul gros bloc.\n\n**`if __name__ == \"__main__\":`** veut dire « n'exécute ce qui suit que si on lance ce fichier directement », pas si on l'importe depuis un autre script. C'est une convention Python très courante, à prendre l'habitude d'utiliser dès maintenant.",
+    "memo": [
+      "Toujours vérifier l'autorisation avant de scanner une machine (voir Charte)",
+      "Découper en fonctions courtes, chacune avec un seul rôle",
+      "`connect_ex()` renvoie 0 si le port est ouvert, autre chose sinon",
+      "`if __name__ == \"__main__\":` protège le code qui ne doit s'exécuter qu'en lancement direct",
+      "`settimeout()` évite qu'un port filtré bloque le script indéfiniment"
+    ],
+    "exercices": [
+      {
+        "enonce": "Modifie `scanner()` pour qu'elle renvoie aussi la liste des ports fermés, en plus des ports ouverts.",
+        "indice": "Ajoute une deuxième liste, remplie dans le `else`.",
+        "solution": "```python\ndef scanner(hote, ports):\n    ouverts, fermes = [], []\n    for port in ports:\n        if tester_port(hote, port):\n            ouverts.append(port)\n        else:\n            fermes.append(port)\n    return ouverts, fermes\n```"
+      },
+      {
+        "enonce": "Adapte le script pour scanner une plage de ports de 1 à 100 au lieu d'une liste fixe.",
+        "indice": "`range()` génère une séquence de nombres, utilisable directement dans la boucle `for port in ...`.",
+        "solution": "`ports_courants = range(1, 101)` à la place de la liste fixe — le reste du script ne change pas."
+      }
+    ]
+  }
+]
